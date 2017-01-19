@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Text.Analyzers.1.2.0-beta2\build\Text.Analyzers.props" Condition="Exists('..\packages\Text.Analyzers.1.2.0-beta2\build\Text.Analyzers.props')" />
+  <Import Project="..\packages\System.Threading.Tasks.Analyzers.1.2.0-beta2\build\System.Threading.Tasks.Analyzers.props" Condition="Exists('..\packages\System.Threading.Tasks.Analyzers.1.2.0-beta2\build\System.Threading.Tasks.Analyzers.props')" />
+  <Import Project="..\packages\System.Runtime.InteropServices.Analyzers.1.2.0-beta2\build\System.Runtime.InteropServices.Analyzers.props" Condition="Exists('..\packages\System.Runtime.InteropServices.Analyzers.1.2.0-beta2\build\System.Runtime.InteropServices.Analyzers.props')" />
+  <Import Project="..\packages\System.Runtime.Analyzers.1.2.0-beta2\build\System.Runtime.Analyzers.props" Condition="Exists('..\packages\System.Runtime.Analyzers.1.2.0-beta2\build\System.Runtime.Analyzers.props')" />
+  <Import Project="..\packages\System.Resources.Analyzers.1.2.0-beta2\build\System.Resources.Analyzers.props" Condition="Exists('..\packages\System.Resources.Analyzers.1.2.0-beta2\build\System.Resources.Analyzers.props')" />
+  <Import Project="..\packages\System.Collections.Immutable.Analyzers.1.2.0-beta2\build\System.Collections.Immutable.Analyzers.props" Condition="Exists('..\packages\System.Collections.Immutable.Analyzers.1.2.0-beta2\build\System.Collections.Immutable.Analyzers.props')" />
+  <Import Project="..\packages\Microsoft.QualityGuidelines.Analyzers.1.2.0-beta2\build\Microsoft.QualityGuidelines.Analyzers.props" Condition="Exists('..\packages\Microsoft.QualityGuidelines.Analyzers.1.2.0-beta2\build\Microsoft.QualityGuidelines.Analyzers.props')" />
+  <Import Project="..\packages\Microsoft.Maintainability.Analyzers.1.2.0-beta2\build\Microsoft.Maintainability.Analyzers.props" Condition="Exists('..\packages\Microsoft.Maintainability.Analyzers.1.2.0-beta2\build\Microsoft.Maintainability.Analyzers.props')" />
+  <Import Project="..\packages\Microsoft.ApiDesignGuidelines.Analyzers.1.2.0-beta2\build\Microsoft.ApiDesignGuidelines.Analyzers.props" Condition="Exists('..\packages\Microsoft.ApiDesignGuidelines.Analyzers.1.2.0-beta2\build\Microsoft.ApiDesignGuidelines.Analyzers.props')" />
+  <Import Project="..\packages\Desktop.Analyzers.1.2.0-beta2\build\Desktop.Analyzers.props" Condition="Exists('..\packages\Desktop.Analyzers.1.2.0-beta2\build\Desktop.Analyzers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5BFEE656-E0B0-42CA-B2B8-F951B3CC43DE}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>siegy</RootNamespace>
+    <AssemblyName>siegy</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>siegy.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>siegy.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CalculateRetirement.cs" />
+    <Compile Include="FinancialData\HistoricData.cs" />
+    <Compile Include="FinancialData\SpeculativeData.cs" />
+    <Compile Include="FinancialObjects\InvestmentYear.cs" />
+    <Compile Include="Helpers\Display.cs" />
+    <Compile Include="Helpers\Financial.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="siegy.ruleset" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Analyzer Include="..\packages\AsyncFixer.1.1.4\analyzers\dotnet\cs\AsyncFixer.dll" />
+    <Analyzer Include="..\packages\Asyncify.0.9.7.0\analyzers\dotnet\cs\Asyncify.dll" />
+    <Analyzer Include="..\packages\ClrHeapAllocationAnalyzer.1.0.0.8\analyzers\dotnet\cs\ClrHeapAllocationAnalyzer.dll" />
+    <Analyzer Include="..\packages\codecracker.CSharp.1.0.1\analyzers\dotnet\cs\CodeCracker.Common.dll" />
+    <Analyzer Include="..\packages\codecracker.CSharp.1.0.1\analyzers\dotnet\cs\CodeCracker.CSharp.dll" />
+    <Analyzer Include="..\packages\CodeStyleAnalyzer.0.1.2.0\analyzers\dotnet\cs\CodeStyleAnalyzer.dll" />
+    <Analyzer Include="..\packages\CSharpAnalyzers.1.1.0\analyzers\dotnet\cs\Roslynator.CSharp.Analyzers.dll" />
+    <Analyzer Include="..\packages\CSharpAnalyzers.1.1.0\analyzers\dotnet\cs\Roslynator.Utilities.dll" />
+    <Analyzer Include="..\packages\Desktop.Analyzers.1.2.0-beta2\analyzers\dotnet\cs\Analyzer.Utilities.dll" />
+    <Analyzer Include="..\packages\Desktop.Analyzers.1.2.0-beta2\analyzers\dotnet\cs\Desktop.Analyzers.dll" />
+    <Analyzer Include="..\packages\Desktop.Analyzers.1.2.0-beta2\analyzers\dotnet\cs\Desktop.CSharp.Analyzers.dll" />
+    <Analyzer Include="..\packages\DumbIfsAnalyzer.1.0.0.1\analyzers\dotnet\cs\DumbIfsAnalyzer.dll" />
+    <Analyzer Include="..\packages\Microsoft.AnalyzerPowerPack.1.1.0\analyzers\dotnet\cs\Microsoft.AnalyzerPowerPack.Common.dll" />
+    <Analyzer Include="..\packages\Microsoft.AnalyzerPowerPack.1.1.0\analyzers\dotnet\cs\Microsoft.AnalyzerPowerPack.CSharp.dll" />
+    <Analyzer Include="..\packages\Microsoft.ApiDesignGuidelines.Analyzers.1.2.0-beta2\analyzers\dotnet\cs\Microsoft.ApiDesignGuidelines.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.ApiDesignGuidelines.Analyzers.1.2.0-beta2\analyzers\dotnet\cs\Microsoft.ApiDesignGuidelines.CSharp.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.2.0-beta2\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.2.0-beta2\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.Maintainability.Analyzers.1.2.0-beta2\analyzers\dotnet\cs\Microsoft.Maintainability.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.Maintainability.Analyzers.1.2.0-beta2\analyzers\dotnet\cs\Microsoft.Maintainability.CSharp.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.QualityGuidelines.Analyzers.1.2.0-beta2\analyzers\dotnet\cs\Microsoft.QualityGuidelines.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.QualityGuidelines.Analyzers.1.2.0-beta2\analyzers\dotnet\cs\Microsoft.QualityGuidelines.CSharp.Analyzers.dll" />
+    <Analyzer Include="..\packages\RefactoringEssentials.4.4.0\analyzers\dotnet\RefactoringEssentials.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.1.20.1\analyzers\Google.Protobuf.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.1.20.1\analyzers\SonarAnalyzer.CSharp.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.1.20.1\analyzers\SonarAnalyzer.dll" />
+    <Analyzer Include="..\packages\System.Collections.Immutable.Analyzers.1.2.0-beta2\analyzers\dotnet\cs\System.Collections.Immutable.Analyzers.dll" />
+    <Analyzer Include="..\packages\System.Collections.Immutable.Analyzers.1.2.0-beta2\analyzers\dotnet\cs\System.Collections.Immutable.CSharp.Analyzers.dll" />
+    <Analyzer Include="..\packages\System.Resources.Analyzers.1.2.0-beta2\analyzers\dotnet\cs\System.Resources.Analyzers.dll" />
+    <Analyzer Include="..\packages\System.Resources.Analyzers.1.2.0-beta2\analyzers\dotnet\cs\System.Resources.CSharp.Analyzers.dll" />
+    <Analyzer Include="..\packages\System.Runtime.Analyzers.1.2.0-beta2\analyzers\dotnet\cs\System.Runtime.Analyzers.dll" />
+    <Analyzer Include="..\packages\System.Runtime.Analyzers.1.2.0-beta2\analyzers\dotnet\cs\System.Runtime.CSharp.Analyzers.dll" />
+    <Analyzer Include="..\packages\System.Runtime.InteropServices.Analyzers.1.2.0-beta2\analyzers\dotnet\cs\System.Runtime.InteropServices.Analyzers.dll" />
+    <Analyzer Include="..\packages\System.Runtime.InteropServices.Analyzers.1.2.0-beta2\analyzers\dotnet\cs\System.Runtime.InteropServices.CSharp.Analyzers.dll" />
+    <Analyzer Include="..\packages\System.Security.Cryptography.Hashing.Algorithms.Analyzers.1.2.0-beta2\analyzers\dotnet\cs\System.Security.Cryptography.Hashing.Algorithms.Analyzers.dll" />
+    <Analyzer Include="..\packages\System.Security.Cryptography.Hashing.Algorithms.Analyzers.1.2.0-beta2\analyzers\dotnet\cs\System.Security.Cryptography.Hashing.Algorithms.CSharp.Analyzers.dll" />
+    <Analyzer Include="..\packages\System.Threading.Tasks.Analyzers.1.2.0-beta2\analyzers\dotnet\cs\System.Threading.Tasks.Analyzers.dll" />
+    <Analyzer Include="..\packages\System.Threading.Tasks.Analyzers.1.2.0-beta2\analyzers\dotnet\cs\System.Threading.Tasks.CSharp.Analyzers.dll" />
+    <Analyzer Include="..\packages\Text.Analyzers.1.2.0-beta2\analyzers\dotnet\cs\Text.Analyzers.dll" />
+    <Analyzer Include="..\packages\Text.Analyzers.1.2.0-beta2\analyzers\dotnet\cs\Text.CSharp.Analyzers.dll" />
+    <Analyzer Include="..\packages\ToStringWithoutOverrideAnalyzer.0.5.0.0\analyzers\dotnet\cs\ToStringWithoutOverrideAnalyzer.dll" />
+    <Analyzer Include="..\packages\UselessIfAnalyzer.0.0.6099.19184\analyzers\dotnet\cs\UselessIfAnalyzer.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Desktop.Analyzers.1.2.0-beta2\build\Desktop.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Desktop.Analyzers.1.2.0-beta2\build\Desktop.Analyzers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApiDesignGuidelines.Analyzers.1.2.0-beta2\build\Microsoft.ApiDesignGuidelines.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApiDesignGuidelines.Analyzers.1.2.0-beta2\build\Microsoft.ApiDesignGuidelines.Analyzers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Maintainability.Analyzers.1.2.0-beta2\build\Microsoft.Maintainability.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Maintainability.Analyzers.1.2.0-beta2\build\Microsoft.Maintainability.Analyzers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.QualityGuidelines.Analyzers.1.2.0-beta2\build\Microsoft.QualityGuidelines.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.QualityGuidelines.Analyzers.1.2.0-beta2\build\Microsoft.QualityGuidelines.Analyzers.props'))" />
+    <Error Condition="!Exists('..\packages\System.Collections.Immutable.Analyzers.1.2.0-beta2\build\System.Collections.Immutable.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Collections.Immutable.Analyzers.1.2.0-beta2\build\System.Collections.Immutable.Analyzers.props'))" />
+    <Error Condition="!Exists('..\packages\System.Resources.Analyzers.1.2.0-beta2\build\System.Resources.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Resources.Analyzers.1.2.0-beta2\build\System.Resources.Analyzers.props'))" />
+    <Error Condition="!Exists('..\packages\System.Runtime.Analyzers.1.2.0-beta2\build\System.Runtime.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Runtime.Analyzers.1.2.0-beta2\build\System.Runtime.Analyzers.props'))" />
+    <Error Condition="!Exists('..\packages\System.Runtime.InteropServices.Analyzers.1.2.0-beta2\build\System.Runtime.InteropServices.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Runtime.InteropServices.Analyzers.1.2.0-beta2\build\System.Runtime.InteropServices.Analyzers.props'))" />
+    <Error Condition="!Exists('..\packages\System.Threading.Tasks.Analyzers.1.2.0-beta2\build\System.Threading.Tasks.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Threading.Tasks.Analyzers.1.2.0-beta2\build\System.Threading.Tasks.Analyzers.props'))" />
+    <Error Condition="!Exists('..\packages\Text.Analyzers.1.2.0-beta2\build\Text.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Text.Analyzers.1.2.0-beta2\build\Text.Analyzers.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
