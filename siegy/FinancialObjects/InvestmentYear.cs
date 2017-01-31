@@ -1,4 +1,6 @@
-﻿using Siegy.Helpers;
+﻿using Siegy.Factories;
+using Siegy.Helpers;
+using Siegy.Interfaces;
 using System.Collections.Generic;
 
 namespace Siegy.FinancialObjects
@@ -15,19 +17,18 @@ namespace Siegy.FinancialObjects
 
         private decimal OneTimeBoughtStocks { get; set; }
 
-        private IList<decimal> MonthlyStockprice { get; set; }
+        private IMonthlyStockQuotes MonthlyStockprice { get; set; }
 
         public InvestmentYear(int pYear)
         {
             Year = pYear;
             MonthlyInvestRate = Financial.GetMonthlyRate(Year);
             OneTimeInvest = Financial.GetYearlyRate(Year);
-            MonthlyStockprice = Financial.GetMonthlyStockQuotes(Year);
-            OneTimeBoughtStocks = OneTimeInvest / MonthlyStockprice[0];
-
-            for (int i = 0; i <= 11; i++)
-            {
-                StockBuysOverTwelveMonths += MonthlyInvestRate / MonthlyStockprice[i];
+            MonthlyStockprice = MonthlyStockQuotesFactory.Get(Year);
+            OneTimeBoughtStocks = OneTimeInvest / MonthlyStockprice.February;
+            
+            foreach (var quote in MonthlyStockprice.StockRates()) {
+                StockBuysOverTwelveMonths += MonthlyInvestRate / quote;
             }
         }
 
@@ -61,11 +62,11 @@ namespace Siegy.FinancialObjects
             }
         }
 
-        private static decimal GetDividendAtYearsStart(int p_year, decimal p_ammount)
+        private static  decimal GetDividendAtYearsStart(int p_year, decimal p_ammount)
         {
             var grossDiv = p_ammount * Financial.GetDividend(p_year);
 
-            return (grossDiv - (grossDiv * 0.26375m)) / Financial.GetStockQuoteAtDividendDay(p_year);
+            return (grossDiv - (grossDiv * 0.26375m)) /   MonthlyStockQuotesFactory.Get        (p_year).DividendDay;
         }
 
         public decimal InvestedCapital()

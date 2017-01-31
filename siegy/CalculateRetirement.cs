@@ -1,4 +1,5 @@
 ﻿using Siegy.FinancialObjects;
+using Siegy.Interfaces;
 using System;
 using System.Collections.Generic;
 
@@ -16,7 +17,7 @@ namespace Siegy
             decimal ammount;
             const int endyear = 2040;
             decimal divperstock;
-            decimal value;
+            decimal stockValue;
             decimal investedCapital;
 
             ammount = 0m;
@@ -27,7 +28,7 @@ namespace Siegy
                 investedCapital += currentYear.InvestedCapital();
             }
 
-            value = Helpers.Financial.GetStockQuoteAtDividendDay(endyear);
+            stockValue =  Factories.MonthlyStockQuotesFactory.Get (endyear).DividendDay;
             divperstock = Helpers.Financial.GetDividend(endyear);
 
             Console.ForegroundColor = ConsoleColor.White;
@@ -36,8 +37,8 @@ namespace Siegy
 
             Helpers.Display.ConWriteLineNumber("Anzahl der Aktien im Jahr {0}: {1}", endyear, ammount);
 
-            Helpers.Display.ConWriteLineFinancial("Wert einer Aktie im Jahr {0}: {1}", endyear, value);
-            Helpers.Display.ConWriteLineFinancial("Gesamtwert der Aktien im Jahr {0}: {1}", endyear, ammount * value);
+            Helpers.Display.ConWriteLineFinancial("Wert einer Aktie im Jahr {0}: {1}", endyear, stockValue);
+            Helpers.Display.ConWriteLineFinancial("Gesamtwert der Aktien im Jahr {0}: {1}", endyear, ammount * stockValue);
 
             Helpers.Display.ConWriteLineFinancial("Geschätze Dividende pro Aktie im Jahr {0}: {1}", endyear, divperstock);
 

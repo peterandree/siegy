@@ -52,9 +52,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CalculateRetirement.cs" />
+    <Compile Include="Factories\MonthlyStockQuotesFactory.cs" />
     <Compile Include="FinancialData\HistoricData.cs" />
     <Compile Include="FinancialData\SpeculativeData.cs" />
+    <Compile Include="FinancialData\Years\MonthlyStockQuotes2011.cs" />
+    <Compile Include="FinancialData\Years\MonthlyStockQuotes2012.cs" />
+    <Compile Include="FinancialData\Years\MonthlyStockQuotes2013.cs" />
+    <Compile Include="FinancialData\Years\MonthlyStockQuotes2014.cs" />
+    <Compile Include="FinancialData\Years\MonthlyStockQuotes2015.cs" />
+    <Compile Include="FinancialData\Years\MonthlyStockQuotes2016.cs" />
+    <Compile Include="FinancialData\Years\MonthlyStockQuotesFuture.cs" />
+    <Compile Include="FinancialObjects\MonthlyStockQuotes.cs" />
     <Compile Include="FinancialObjects\InvestmentYear.cs" />
+    <Compile Include="Interfaces\IMonthlyStockQuotes.cs" />
     <Compile Include="Helpers\Display.cs" />
     <Compile Include="Helpers\Financial.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
