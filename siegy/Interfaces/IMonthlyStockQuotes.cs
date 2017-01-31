@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Siegy.Interfaces
 {
-    interface IMonthlyStockQuotes
+    internal interface IMonthlyStockQuotes
     {
-        decimal February { get;  }
+        decimal February { get; }
         decimal March { get; }
         decimal April { get; }
         decimal May { get; }
@@ -24,7 +24,7 @@ namespace Siegy.Interfaces
         decimal DividendDay { get; }
 
         IEnumerable<decimal> StockRates();
-        IList<decimal> StockRatesListed();
 
+        IList<decimal> StockRatesListed();
     }
 }

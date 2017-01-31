@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Siegy.FinancialObjects
 {
-    abstract class MonthlyStockQuotes : IMonthlyStockQuotes
+    internal abstract class MonthlyStockQuotes : IMonthlyStockQuotes
 
     {
         protected decimal _February;
@@ -119,6 +119,7 @@ namespace Siegy.FinancialObjects
                 return _January;
             }
         }
+
         public decimal DividendDay
         {
             get
@@ -126,6 +127,7 @@ namespace Siegy.FinancialObjects
                 return _DividendDay;
             }
         }
+
         public IEnumerable<decimal> StockRates()
         {
             //February to January

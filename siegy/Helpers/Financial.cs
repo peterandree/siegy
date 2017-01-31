@@ -41,5 +41,17 @@ namespace Siegy.Helpers
 
             return dividend + (back * SpeculativeData.ExpectedDividendsRaiseInEuro);
         }
+
+        public static decimal GetDividendAtYearsStart(int p_year, decimal p_ammount)
+        {
+            var grossDiv = p_ammount * Financial.GetDividend(p_year);
+
+            return AdjustForTaxOnCapitalGains(grossDiv) / MonthlyStockQuotesFactory.Get(p_year).DividendDay;
+        }
+
+        public static decimal AdjustForTaxOnCapitalGains(decimal p_gross)
+        {
+            return p_gross - (p_gross * 0.26375m);
+        }
     }
 }

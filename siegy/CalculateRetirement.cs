@@ -28,7 +28,7 @@ namespace Siegy
                 investedCapital += currentYear.InvestedCapital();
             }
 
-            stockValue =  Factories.MonthlyStockQuotesFactory.Get (endyear).DividendDay;
+            stockValue = Factories.MonthlyStockQuotesFactory.Get(endyear).DividendDay;
             divperstock = Helpers.Financial.GetDividend(endyear);
 
             Console.ForegroundColor = ConsoleColor.White;

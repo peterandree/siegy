@@ -60,6 +60,7 @@
     <Compile Include="FinancialData\Years\MonthlyStockQuotes2013.cs" />
     <Compile Include="FinancialData\Years\MonthlyStockQuotes2014.cs" />
     <Compile Include="FinancialData\Years\MonthlyStockQuotes2015.cs" />
+    <Compile Include="FinancialData\Years\MonthlyStockQuotes2017.cs" />
     <Compile Include="FinancialData\Years\MonthlyStockQuotes2016.cs" />
     <Compile Include="FinancialData\Years\MonthlyStockQuotesFuture.cs" />
     <Compile Include="FinancialObjects\MonthlyStockQuotes.cs" />

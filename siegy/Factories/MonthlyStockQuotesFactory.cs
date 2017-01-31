@@ -14,7 +14,7 @@ namespace Siegy.Factories
     {
         public static IMonthlyStockQuotes Get(int p_year)
         {
-            var lastKnowYear = 2016;
+            var lastAtLeastPartiallyKnownYear = 2017;
 
             switch (p_year)
             {
@@ -42,12 +42,16 @@ namespace Siegy.Factories
                     {
                         return new MonthlyStockQuotes2016();
                     }
+                case 2017:
+                    {
+                        return new MonthlyStockQuotes2017();
+                    }
                 default:
                     {
-                        var lastKnownQuotes = Get(lastKnowYear);
+                        var lastKnownQuotes = Get(lastAtLeastPartiallyKnownYear);
 
                         var lastQuote = lastKnownQuotes.January;
-                        lastQuote += lastQuote * (SpeculativeData.ExpectedYearlyStockValueRaiseInPercent * (p_year - lastKnowYear));
+                        lastQuote += lastQuote * (SpeculativeData.ExpectedYearlyStockValueRaiseInPercent * (p_year - lastAtLeastPartiallyKnownYear));
                         return new MonthlyStockQuotesFuture(lastQuote);
                     }
             }
