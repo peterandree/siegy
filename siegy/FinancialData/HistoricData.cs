@@ -4,9 +4,9 @@ using System.Linq;
 
 namespace Siegy.FinancialData
 {
-    internal static class HistoricData
+    public static class HistoricData
     {
-        internal static decimal Dividend(int p_year)
+        public static decimal Dividend(int p_year)
         {
             // in Euro
             switch (p_year)
@@ -41,7 +41,7 @@ namespace Siegy.FinancialData
             }
         }
 
-        internal static decimal OneTimeRate(int p_year)
+        public static decimal OneTimeRate(int p_year)
         {
             switch (p_year)
             {
@@ -58,7 +58,7 @@ namespace Siegy.FinancialData
             }
         }
 
-        internal static readonly Dictionary<int, decimal> MonthlyRate = InternalMonththlyRate().ToDictionary(x => x.Key, x => x.Value);
+        public static readonly Dictionary<int, decimal> MonthlyRate = InternalMonththlyRate().ToDictionary(x => x.Key, x => x.Value);
 
         private static IEnumerable<KeyValuePair<int, decimal>> InternalMonththlyRate()
         {
@@ -71,14 +71,14 @@ namespace Siegy.FinancialData
             yield return new KeyValuePair<int, decimal>(2017, 179m);
         }
 
-        internal static decimal ProfitSharingStocks(int pYear)
+        public static decimal ProfitSharingStocks(int pYear)
         {
             switch (pYear)
             {
-                case 2018:
-                    {
-                        return 10m;//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!estimated
-                    }
+                //case 2018:
+                //    {
+                //        return 10m;//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!estimated
+                //    }
                 default:
                     {
                         return 0m;

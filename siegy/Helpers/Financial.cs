@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Siegy.Helpers
 {
-    internal static class Financial
+    public static class Financial
     {
         public static decimal GetMonthlyRate(int year)
         {

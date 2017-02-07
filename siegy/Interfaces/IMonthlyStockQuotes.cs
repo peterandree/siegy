@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Siegy.Interfaces
 {
-    internal interface IMonthlyStockQuotes
+    public interface IMonthlyStockQuotes
     {
         decimal February { get; }
         decimal March { get; }

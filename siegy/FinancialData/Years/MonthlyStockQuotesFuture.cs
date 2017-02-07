@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Siegy.FinancialData.Years
 {
-    internal class MonthlyStockQuotesFuture : MonthlyStockQuotes
+    public class MonthlyStockQuotesFuture : MonthlyStockQuotes
     {
         private MonthlyStockQuotesFuture()
         {

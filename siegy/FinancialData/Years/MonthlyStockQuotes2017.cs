@@ -12,11 +12,11 @@ namespace Siegy.FinancialData.Years
     {
         public MonthlyStockQuotes2017()
         {
-            var lastQuote = MonthlyStockQuotesFactory.Get(2016).January; //change when new informations are known
+            var lastQuote = 118.9m; //change when new informations are known
 
             lastQuote += lastQuote * (SpeculativeData.ExpectedYearlyStockValueRaiseInPercent);
 
-            this._DividendDay = lastQuote;
+            this._DividendDay = 118.9m;  //Spekulation !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             this._February = lastQuote;
             this._March = lastQuote;
             this._April = lastQuote;

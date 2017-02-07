@@ -65,7 +65,7 @@ namespace Siegy.FinancialObjects
 
         public decimal InvestedCapital()
         {
-            return OneTimeInvest + MonthlyInvestRate * 12m;
+            return (OneTimeInvest / 2) + MonthlyInvestRate * 12m;
         }
     }
 }

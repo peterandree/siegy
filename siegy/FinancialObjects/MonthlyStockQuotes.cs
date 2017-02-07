@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Siegy.FinancialObjects
 {
-    internal abstract class MonthlyStockQuotes : IMonthlyStockQuotes
+    public abstract class MonthlyStockQuotes : IMonthlyStockQuotes
 
     {
         protected decimal _February;

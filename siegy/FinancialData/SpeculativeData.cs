@@ -1,6 +1,6 @@
 ﻿namespace Siegy.FinancialData
 {
-    internal static class SpeculativeData
+    public static class SpeculativeData
     {
         public static decimal ExpectedDividendsRaiseInEuro { get; set; } = 0.1m; // == 5 Cent
 

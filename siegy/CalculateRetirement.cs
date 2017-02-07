@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Siegy
 {
-    internal static class CalculateRetirement
+    public static class CalculateRetirement
     {
         public static void Main()
         {
