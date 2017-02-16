@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Net;
-using Newtonsoft.Json.Linq;
 
 namespace ConsoleProgram
 {
@@ -15,13 +15,11 @@ namespace ConsoleProgram
         //private static string urlParameters; //= "?q=FRA:SIE&output=json";
         //http://finance.google.com/finance/info?client=ig&q=FRA:SIE
 
-
         private static void Main()
         {
             //const string tickers = "AAPL,GOOG,GOOGL,YHOO,TSLA,INTC,AMZN,BIDU,ORCL,MSFT,ORCL,ATVI,NVDA,GME,LNKD,NFLX";
             const string tickers = "SIE";
             const string market = "ETR";
-
 
             string json;
 

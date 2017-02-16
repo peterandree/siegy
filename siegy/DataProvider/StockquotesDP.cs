@@ -12,22 +12,9 @@ namespace siegy.DataProvider
     {
         public StockquotesDP()
         {
-        //    //https://www.google.com/finance/info?q=NSE:AIAENG,ATULAUTO
+            //    //https://www.google.com/finance/info?q=NSE:AIAENG,ATULAUTO
 
-        //var resstclient = new RestSharp.RestClient("https://www.google.com/finance/info");
-
-
-
-
+            //var resstclient = new RestSharp.RestClient("https://www.google.com/finance/info");
         }
-
-
-
-
-
-
-
-
-
     }
 }

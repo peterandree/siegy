@@ -47,7 +47,7 @@
     <CodeAnalysisRuleSet>siegy.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>ConsoleProgram.RestTest</StartupObject>
+    <StartupObject>Siegy.CalculateRetirement</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ExpectedObjects, Version=1.2.3.0, Culture=neutral, processorArchitecture=MSIL">
@@ -92,6 +92,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CalculateRetirement.cs" />
+    <Compile Include="Controls\CalculateRetirementControl.cs" />
     <Compile Include="DataProvider\Tests\RestTest.cs" />
     <Compile Include="DataProvider\StockquotesDP.cs" />
     <Compile Include="Factories\MonthlyStockQuotesFactory.cs" />
@@ -107,10 +108,15 @@
     <Compile Include="FinancialData\Years\MonthlyStockQuotesFuture.cs" />
     <Compile Include="FinancialObjects\MonthlyStockQuotes.cs" />
     <Compile Include="FinancialObjects\InvestmentYear.cs" />
+    <Compile Include="Interfaces\IControl.cs" />
+    <Compile Include="Interfaces\IModel.cs" />
     <Compile Include="Interfaces\IMonthlyStockQuotes.cs" />
     <Compile Include="Helpers\Display.cs" />
     <Compile Include="Helpers\Financial.cs" />
+    <Compile Include="Interfaces\IView.cs" />
+    <Compile Include="Models\CalculateRetirementModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\CalculateRetirementView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
