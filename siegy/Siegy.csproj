@@ -106,6 +106,7 @@
     <Compile Include="FinancialData\Years\MonthlyStockQuotes2017.cs" />
     <Compile Include="FinancialData\Years\MonthlyStockQuotes2016.cs" />
     <Compile Include="FinancialData\Years\MonthlyStockQuotesFuture.cs" />
+    <Compile Include="FinancialObjects\AllPossibleYearsForMe.cs" />
     <Compile Include="FinancialObjects\MonthlyStockQuotes.cs" />
     <Compile Include="FinancialObjects\InvestmentYear.cs" />
     <Compile Include="Interfaces\IControl.cs" />

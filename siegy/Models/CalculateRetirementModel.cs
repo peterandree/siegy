@@ -1,4 +1,5 @@
-﻿using siegy.Interfaces;
+﻿using siegy.FinancialObjects;
+using siegy.Interfaces;
 using Siegy.Factories;
 using Siegy.FinancialObjects;
 using Siegy.Helpers;
@@ -12,6 +13,7 @@ namespace siegy.Models
 {
     internal class CalculateRetirementModel : IModel
     {
+        #region properties
         public decimal Ammount
         {
             get
@@ -60,6 +62,8 @@ namespace siegy.Models
         private decimal _stockValue;
         private decimal _investedCapital;
 
+        #endregion
+
         public void SetEndYear(int p_endyear)
         {
             _endYear = p_endyear;
@@ -72,7 +76,7 @@ namespace siegy.Models
 
             _ammount = 0m;
             _investedCapital = 0m;
-            foreach (InvestmentYear currentYear in AllYears())
+            foreach (InvestmentYear currentYear in AllPossibleYearsForMe.AllYears())
             {
                 if (currentYear.Year <= _endYear)
                 {
@@ -85,37 +89,5 @@ namespace siegy.Models
             _divPerStock = Financial.GetDividend(_endYear);
         }
 
-        private static IEnumerable<InvestmentYear> AllYears()
-        {
-            yield return new InvestmentYear(2011);
-            yield return new InvestmentYear(2012);
-            yield return new InvestmentYear(2014);
-            yield return new InvestmentYear(2015);
-            yield return new InvestmentYear(2016);
-            yield return new InvestmentYear(2017);
-            yield return new InvestmentYear(2018);
-            yield return new InvestmentYear(2019);
-            yield return new InvestmentYear(2020);
-            yield return new InvestmentYear(2021);
-            yield return new InvestmentYear(2022);
-            yield return new InvestmentYear(2023);
-            yield return new InvestmentYear(2023);
-            yield return new InvestmentYear(2025);
-            yield return new InvestmentYear(2026);
-            yield return new InvestmentYear(2027);
-            yield return new InvestmentYear(2028);
-            yield return new InvestmentYear(2029);
-            yield return new InvestmentYear(2030);
-            yield return new InvestmentYear(2031);
-            yield return new InvestmentYear(2032);
-            yield return new InvestmentYear(2033);
-            yield return new InvestmentYear(2033);
-            yield return new InvestmentYear(2035);
-            yield return new InvestmentYear(2036);
-            yield return new InvestmentYear(2037);
-            yield return new InvestmentYear(2038);
-            yield return new InvestmentYear(2039);
-            yield return new InvestmentYear(2040);
-        }
     }
 }
