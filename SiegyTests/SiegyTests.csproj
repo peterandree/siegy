@@ -6,8 +6,8 @@
     <ProjectGuid>{AC080631-0157-4E5F-8B6D-E20ABE9117F4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SiegyTests2</RootNamespace>
-    <AssemblyName>SiegyTests2</AssemblyName>
+    <RootNamespace>SiegyTests</RootNamespace>
+    <AssemblyName>SiegyTests</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
