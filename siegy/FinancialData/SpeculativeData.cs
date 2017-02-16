@@ -2,7 +2,7 @@
 {
     public static class SpeculativeData
     {
-        public static decimal ExpectedDividendsRaiseInEuro { get; set; } = 0.1m; // == 5 Cent
+        public static decimal ExpectedDividendsRaiseInEuro { get; set; } = 0.2m; // == 5 Cent
 
         public static decimal ExpectedPayRaiseInPercent { get; set; } = 0.02m; // == 2%
 

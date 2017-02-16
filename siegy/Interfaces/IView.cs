@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace siegy.Interfaces
 {
-    internal interface IView
+    internal interface IView:IObserver
     {
         void SetController(IControl controller);
 
         void SetModel(IModel view);
 
-        void Update();
+        //void Update();
 
         string WaitForInput(); //"Eventhandler"
     }

@@ -15,6 +15,8 @@ namespace ConsoleProgram
         //private static string urlParameters; //= "?q=FRA:SIE&output=json";
         //http://finance.google.com/finance/info?client=ig&q=FRA:SIE
 
+        //next goal: scrape this page http://www.finanzen.net/Kursziele/Siemens
+
         private static void Main()
         {
             //const string tickers = "AAPL,GOOG,GOOGL,YHOO,TSLA,INTC,AMZN,BIDU,ORCL,MSFT,ORCL,ATVI,NVDA,GME,LNKD,NFLX";

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace siegy.Views
 {
     internal class CalculateRetirementView : IView
-    {
+            {
         private IControl _controller;
         private IModel _model;
 

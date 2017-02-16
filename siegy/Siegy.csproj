@@ -114,6 +114,8 @@
     <Compile Include="Interfaces\IMonthlyStockQuotes.cs" />
     <Compile Include="Helpers\Display.cs" />
     <Compile Include="Helpers\Financial.cs" />
+    <Compile Include="Interfaces\IObserver.cs" />
+    <Compile Include="Interfaces\ISubject.cs" />
     <Compile Include="Interfaces\IView.cs" />
     <Compile Include="Models\CalculateRetirementModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

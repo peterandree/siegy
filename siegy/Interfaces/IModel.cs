@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace siegy.Interfaces
 {
-    internal interface IModel
+    internal interface IModel:ISubject
     {
         decimal Ammount { get; }
         int Endyear { get; }
