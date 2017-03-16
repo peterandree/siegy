@@ -10,7 +10,7 @@ namespace siegy.Interfaces
     {
         void SetController(IControl controller);
 
-        void SetModel(IModel view);
+        void SetModel(IModel model);
 
         //void Update();
 

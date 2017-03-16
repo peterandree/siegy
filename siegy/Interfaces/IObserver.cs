@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace siegy.Interfaces
 {
-    interface IObserver
+    internal interface IObserver
     {
         void Update();
     }

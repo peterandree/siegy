@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 namespace Siegy.FinancialObjects
 {
     public abstract class MonthlyStockQuotes : IMonthlyStockQuotes
-
     {
         protected decimal _February;
         protected decimal _March;
@@ -24,109 +23,31 @@ namespace Siegy.FinancialObjects
         protected decimal _January;
         protected decimal _DividendDay;
 
-        public decimal February
-        {
-            get
-            {
-                return _February;
-            }
-        }
+        public decimal February => _February;
 
-        public decimal March
-        {
-            get
-            {
-                return _March;
-            }
-        }
+        public decimal March => _March;
 
-        public decimal April
-        {
-            get
-            {
-                return _April;
-            }
-        }
+        public decimal April => _April;
 
-        public decimal May
-        {
-            get
-            {
-                return _May;
-            }
-        }
+        public decimal May => _May;
 
-        public decimal June
-        {
-            get
-            {
-                return _June;
-            }
-        }
+        public decimal June => _June;
 
-        public decimal July
-        {
-            get
-            {
-                return _July;
-            }
-        }
+        public decimal July => _July;
 
-        public decimal August
-        {
-            get
-            {
-                return _August;
-            }
-        }
+        public decimal August => _August;
 
-        public decimal September
-        {
-            get
-            {
-                return _September;
-            }
-        }
+        public decimal September => _September;
 
-        public decimal October
-        {
-            get
-            {
-                return _October;
-            }
-        }
+        public decimal October => _October;
 
-        public decimal November
-        {
-            get
-            {
-                return _November;
-            }
-        }
+        public decimal November => _November;
 
-        public decimal December
-        {
-            get
-            {
-                return _December;
-            }
-        }
+        public decimal December => _December;
 
-        public decimal January
-        {
-            get
-            {
-                return _January;
-            }
-        }
+        public decimal January => _January;
 
-        public decimal DividendDay
-        {
-            get
-            {
-                return _DividendDay;
-            }
-        }
+        public decimal DividendDay => _DividendDay;
 
         public IEnumerable<decimal> StockRates()
         {
@@ -145,9 +66,6 @@ namespace Siegy.FinancialObjects
             yield return January;
         }
 
-        public IList<decimal> StockRatesListed()
-        {
-            return StockRates().ToList();
-        }
+        public IList<decimal> StockRatesListed() => StockRates().ToList();
     }
 }

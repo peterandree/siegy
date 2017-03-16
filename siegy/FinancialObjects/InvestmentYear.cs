@@ -63,9 +63,6 @@ namespace Siegy.FinancialObjects
             }
         }
 
-        public decimal InvestedCapital()
-        {
-            return (OneTimeInvest / 2) + MonthlyInvestRate * 12m;
-        }
+        public decimal InvestedCapital() => (OneTimeInvest / 2) + MonthlyInvestRate * 12m;
     }
 }

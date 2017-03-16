@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Siegy.Factories
 {
-    public class MonthlyStockQuotesFactory
+    public static class MonthlyStockQuotesFactory
     {
         public static IMonthlyStockQuotes Get(int p_year)
         {

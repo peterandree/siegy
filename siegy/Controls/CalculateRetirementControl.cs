@@ -29,7 +29,7 @@ namespace siegy.Controls
 
             while (!"X".Equals(input, StringComparison.OrdinalIgnoreCase))
             {
-                if (Int32.TryParse(input, out inputYear))
+                if (int.TryParse(input, out inputYear))
                 {
                     _model.SetEndYear(inputYear);
                 }

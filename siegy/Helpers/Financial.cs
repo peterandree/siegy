@@ -19,10 +19,7 @@ namespace Siegy.Helpers
             return rate;
         }
 
-        public static decimal GetYearlyRate(int year)
-        {
-            return HistoricData.OneTimeRate(year);
-        }
+        public static decimal GetYearlyRate(int year) => HistoricData.OneTimeRate(year);
 
         public static decimal GetDividend(int p_year)
         {
@@ -32,11 +29,12 @@ namespace Siegy.Helpers
                 return dividend;
             }
 
-            int back = 0;
+            var back = 0;
             do
             {
                 back++;
                 dividend = HistoricData.Dividend(p_year - back);
+
             } while (dividend < 0);
 
             return dividend + (back * SpeculativeData.ExpectedDividendsRaiseInEuro);
@@ -49,9 +47,6 @@ namespace Siegy.Helpers
             return AdjustForTaxOnCapitalGains(grossDiv) / MonthlyStockQuotesFactory.Get(p_year).DividendDay;
         }
 
-        public static decimal AdjustForTaxOnCapitalGains(decimal p_gross)
-        {
-            return p_gross - (p_gross * 0.26375m);
-        }
+        public static decimal AdjustForTaxOnCapitalGains(decimal p_gross) => p_gross - (p_gross * 0.26375m);
     }
 }

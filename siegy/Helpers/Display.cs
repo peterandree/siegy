@@ -8,9 +8,9 @@ namespace Siegy.Helpers
     {
         private static NumberFormatInfo EuroFormat()
         {
-            CultureInfo de = new CultureInfo("de-DE");
+            var de = new CultureInfo("de-DE");
             Thread.CurrentThread.CurrentCulture = de;
-            NumberFormatInfo localFormat = (NumberFormatInfo)NumberFormatInfo.CurrentInfo.Clone();
+            var localFormat = (NumberFormatInfo)NumberFormatInfo.CurrentInfo.Clone();
             // Replaces the default currency symbol with the
             // local currency symbol.
             localFormat.CurrencySymbol = "Euro";

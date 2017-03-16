@@ -14,45 +14,15 @@ namespace siegy.Models
     internal class CalculateRetirementModel : IModel
     {
         #region properties
-        public decimal Ammount
-        {
-            get
-            {
-                return _ammount;
-            }
-        }
+        public decimal Ammount => _ammount;
 
-        public int Endyear
-        {
-            get
-            {
-                return _endYear;
-            }
-        }
+        public int Endyear => _endYear;
 
-        public decimal DivPerStock
-        {
-            get
-            {
-                return _divPerStock;
-            }
-        }
+        public decimal DivPerStock => _divPerStock;
 
-        public decimal StockValue
-        {
-            get
-            {
-                return _stockValue;
-            }
-        }
+        public decimal StockValue => _stockValue;
 
-        public decimal InvestedCapital
-        {
-            get
-            {
-                return _investedCapital;
-            }
-        }
+        public decimal InvestedCapital => _investedCapital;
 
         //   public     List<decimal> averageReturnOnInvest { get;  }
 

@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace siegy.FinancialObjects
 {
-   static internal class AllPossibleYearsForMe
+   internal static class AllPossibleYearsForMe
     {
-         static internal IEnumerable<InvestmentYear> AllYears()
+         internal static IEnumerable<InvestmentYear> AllYears()
         {
             yield return new InvestmentYear(2011);
             yield return new InvestmentYear(2012);

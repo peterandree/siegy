@@ -4,14 +4,14 @@ using System.Net;
 
 namespace ConsoleProgram
 {
-    public class DataObject
+
+    public static class RestTest
+    {
+     private class DataObject
     {
         public string Name { get; set; }
     }
-
-    public class RestTest
-    {
-        //private static string URL;//= "http://www.google.com/finance/option_chain";
+       //private static string URL;//= "http://www.google.com/finance/option_chain";
         //private static string urlParameters; //= "?q=FRA:SIE&output=json";
         //http://finance.google.com/finance/info?client=ig&q=FRA:SIE
 
@@ -35,7 +35,7 @@ namespace ConsoleProgram
             //Google adds a comment before the json for some unknown reason, so we need to remove it
             json = json.Replace("//", "");
 
-            foreach (var i in JArray.Parse(json))
+            foreach (JToken i in JArray.Parse(json))
             {
                 var ticker = i.SelectToken("t");
                 var price = (decimal)i.SelectToken("l");
