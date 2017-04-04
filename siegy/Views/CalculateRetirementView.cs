@@ -1,4 +1,4 @@
-﻿using siegy.Interfaces;
+﻿using Siegy.Interfaces;
 using Siegy.Helpers;
 using System;
 using System.Collections.Generic;
@@ -6,42 +6,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace siegy.Views
+namespace Siegy.Views
 {
     internal class CalculateRetirementView : IView
             {
         private IControl _controller;
         private IModel _model;
 
-        public void SetController(IControl controller)
-        {
-            _controller = controller;
-        }
+        public void SetController(IControl controller) => _controller = controller;
 
-        public void SetModel(IModel model)
-        {
-            _model = model;
-        }
+        public void SetModel(IModel model) => _model = model;
 
-        public void Update()
-        {
-            Draw();
-        }
+        public void Update() => Draw();
 
         private void Draw()
         {
             Console.ForegroundColor = ConsoleColor.White;
 
-            Display.ConWriteLineFinancial("Gesamtinvestment: {0}", _model.InvestedCapital);
+            var returns = _model.investmentReturns;
 
-            Display.ConWriteLineNumber("Anzahl der Aktien im Jahr {0}: {1}", _model.Endyear, _model.Ammount);
+            Display.ConWriteLineFinancial("Gesamtinvestment: {0}", _model.investmentReturns.InvestedCapital);
 
-            Display.ConWriteLineFinancial("Wert einer Aktie im Jahr {0}: {1}", _model.Endyear, _model.StockValue);
-            Display.ConWriteLineFinancial("Gesamtwert der Aktien im Jahr {0}: {1}", _model.Endyear, _model.Ammount * _model.StockValue);
+            Display.ConWriteLineNumber("Anzahl der Aktien im Jahr {0}: {1}", returns.Endyear, returns.Ammount);
 
-            Display.ConWriteLineFinancial("Geschätze Dividende pro Aktie im Jahr {0}: {1}", _model.Endyear, _model.DivPerStock);
+            Display.ConWriteLineFinancial("Wert einer Aktie im Jahr {0}: {1}", returns.Endyear, returns.StockValue);
+            Display.ConWriteLineFinancial("Gesamtwert der Aktien im Jahr {0}: {1}", returns.Endyear, returns.Ammount * returns.StockValue);
 
-            Display.ConWriteLineFinancial("Geschätze Dividendenzahlungen im Jahr {0}: {1}", _model.Endyear, _model.Ammount * _model.DivPerStock);
+            Display.ConWriteLineFinancial("Geschätze Dividende pro Aktie im Jahr {0}: {1}", returns.Endyear, returns.DivPerStock);
+
+            Display.ConWriteLineFinancial("Geschätze Dividendenzahlungen im Jahr {0}: {1}", returns.Endyear, returns.Ammount * returns.DivPerStock);
         }
 
         public string WaitForInput()
@@ -51,3 +44,5 @@ namespace siegy.Views
         }
     }
 }
+
+  

@@ -1,11 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Siegy", "siegy\Siegy.csproj", "{5BFEE656-E0B0-42CA-B2B8-F951B3CC43DE}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiegyTests", "SiegyTests2\SiegyTests.csproj", "{AC080631-0157-4E5F-8B6D-E20ABE9117F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiegyApi", "SiegyApi\SiegyApi.csproj", "{572BF64B-1558-45C5-93E2-32A3C6EBE09A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiegyConsole", "SiegyConsole\SiegyConsole.csproj", "{71D83976-219F-4725-8EAD-5A713B98A588}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiegyFinances", "SiegyFinances\SiegyFinances.csproj", "{43989FC0-2F8A-4234-BD78-50A53285185A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +17,22 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5BFEE656-E0B0-42CA-B2B8-F951B3CC43DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5BFEE656-E0B0-42CA-B2B8-F951B3CC43DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5BFEE656-E0B0-42CA-B2B8-F951B3CC43DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5BFEE656-E0B0-42CA-B2B8-F951B3CC43DE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AC080631-0157-4E5F-8B6D-E20ABE9117F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AC080631-0157-4E5F-8B6D-E20ABE9117F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC080631-0157-4E5F-8B6D-E20ABE9117F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC080631-0157-4E5F-8B6D-E20ABE9117F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{572BF64B-1558-45C5-93E2-32A3C6EBE09A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{572BF64B-1558-45C5-93E2-32A3C6EBE09A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{572BF64B-1558-45C5-93E2-32A3C6EBE09A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{572BF64B-1558-45C5-93E2-32A3C6EBE09A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71D83976-219F-4725-8EAD-5A713B98A588}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71D83976-219F-4725-8EAD-5A713B98A588}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71D83976-219F-4725-8EAD-5A713B98A588}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71D83976-219F-4725-8EAD-5A713B98A588}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43989FC0-2F8A-4234-BD78-50A53285185A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43989FC0-2F8A-4234-BD78-50A53285185A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43989FC0-2F8A-4234-BD78-50A53285185A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43989FC0-2F8A-4234-BD78-50A53285185A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

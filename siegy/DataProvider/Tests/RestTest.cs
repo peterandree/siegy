@@ -4,7 +4,6 @@ using System.Net;
 
 namespace ConsoleProgram
 {
-
     public static class RestTest
     {
      private class DataObject

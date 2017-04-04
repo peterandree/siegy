@@ -1,39 +1,30 @@
-﻿using siegy.FinancialObjects;
-using siegy.Interfaces;
+﻿using siegy.FinancialCalculations;
+using siegy.FinancialObjects;
 using Siegy.Factories;
 using Siegy.FinancialObjects;
+using Siegy.FinancialObjects;
 using Siegy.Helpers;
+using Siegy.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace siegy.Models
+namespace Siegy.Models
 {
     internal class CalculateRetirementModel : IModel
     {
         #region properties
-        public decimal Ammount => _ammount;
+        
+        private InvestmentReturns  _investmentReturns = new InvestmentReturns();
 
-        public int Endyear => _endYear;
-
-        public decimal DivPerStock => _divPerStock;
-
-        public decimal StockValue => _stockValue;
-
-        public decimal InvestedCapital => _investedCapital;
-
-        //   public     List<decimal> averageReturnOnInvest { get;  }
+        public InvestmentReturns investmentReturns =>  _investmentReturns;
 
         private int _endYear;
-        private decimal _ammount;
-        private decimal _divPerStock;
-        private decimal _stockValue;
-        private decimal _investedCapital;
 
         //Observerproperties
-        private List<IObserver> _observers = new List<IObserver>();
+        private readonly List<IObserver> _observers = new List<IObserver>();
 
         #endregion
 
@@ -44,35 +35,12 @@ namespace siegy.Models
             Notify();
         }
 
+        public void Calculate() => _investmentReturns = CalculateReturns.Calculate(_endYear);
 
-        public void Calculate()
-        {
-            var averageReturnOnInvest = new List<decimal>();
 
-            _ammount = 0m;
-            _investedCapital = 0m;
-            foreach (InvestmentYear currentYear in AllPossibleYearsForMe.AllYears())
-            {
-                if (currentYear.Year <= _endYear)
-                {
-                    _ammount += currentYear.AccumulatedStocks(_endYear);
-                    _investedCapital += currentYear.InvestedCapital();
-                }
-            }
+        public void Attach(IObserver p_observer) => _observers.Add(p_observer);
 
-            _stockValue = Siegy.Factories.MonthlyStockQuotesFactory.Get(_endYear).DividendDay;
-            _divPerStock = Financial.GetDividend(_endYear);
-        }
-
-        public void Attach(IObserver p_observer)
-        {
-            _observers.Add(p_observer);
-        }
-
-        public void Detach(IObserver p_observer)
-        {
-            _observers.Remove(p_observer);
-        }
+        public void Detach(IObserver p_observer) => _observers.Remove(p_observer);
 
         public void Notify()
         {

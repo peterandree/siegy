@@ -1,10 +1,10 @@
-﻿using siegy.Interfaces;
+﻿using Siegy.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace siegy.Controls
+namespace Siegy.Controls
 {
     internal class CalculateRetirementControl : IControl
     {
@@ -24,12 +24,11 @@ namespace siegy.Controls
         {
             _model.SetEndYear(startYear);
 
-            int inputYear;
             var input = _view.WaitForInput().Trim();
 
             while (!"X".Equals(input, StringComparison.OrdinalIgnoreCase))
             {
-                if (int.TryParse(input, out inputYear))
+                if (int.TryParse(input,  out int inputYear))
                 {
                     _model.SetEndYear(inputYear);
                 }

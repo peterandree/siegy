@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace siegy.FinancialObjects
+namespace Siegy.FinancialObjects
 {
    internal static class AllPossibleYearsForMe
     {

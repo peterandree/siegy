@@ -1,19 +1,15 @@
-﻿using System;
+﻿using siegy.FinancialObjects;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace siegy.Interfaces
+namespace Siegy.Interfaces
 {
     internal interface IModel:ISubject
     {
-        decimal Ammount { get; }
-        int Endyear { get; }
-        decimal DivPerStock { get; }
-        decimal StockValue { get; }
-        decimal InvestedCapital { get; }
-        //   public     List<decimal> averageReturnOnInvest { get;  }
+        InvestmentReturns investmentReturns { get; }
 
         void SetEndYear(int p_endyear);
     }

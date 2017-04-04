@@ -8,9 +8,7 @@ namespace Siegy.Helpers
     {
         public static decimal GetMonthlyRate(int year)
         {
-            decimal rate;
-
-            if (!HistoricData.MonthlyRate.TryGetValue(year, out rate))
+            if (!HistoricData.MonthlyRate.TryGetValue(year, out decimal rate))
             {
                 rate = GetMonthlyRate(year - 1);
                 rate += rate * SpeculativeData.ExpectedPayRaiseInPercent;

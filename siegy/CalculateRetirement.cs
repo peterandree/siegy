@@ -1,6 +1,6 @@
-﻿using siegy.Controls;
-using siegy.Models;
-using siegy.Views;
+﻿using Siegy.Controls;
+using Siegy.Models;
+using Siegy.Views;
 using Siegy.FinancialObjects;
 using Siegy.Interfaces;
 using System;
@@ -11,10 +11,7 @@ namespace Siegy
 {
     public static class CalculateRetirement
     {
-        public static void Main()
-        {
-            Begin();
-        }
+        public static void Main() => Begin();
 
         private static void Begin()
         {

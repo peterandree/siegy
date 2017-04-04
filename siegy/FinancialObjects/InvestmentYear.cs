@@ -2,6 +2,7 @@
 using Siegy.Helpers;
 using Siegy.Interfaces;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Siegy.FinancialObjects
 {
@@ -26,7 +27,7 @@ namespace Siegy.FinancialObjects
             OneTimeInvest = Financial.GetYearlyRate(Year);
             MonthlyStockprice = MonthlyStockQuotesFactory.Get(Year);
             OneTimeBoughtStocks = OneTimeInvest / MonthlyStockprice.February;
-
+                       
             foreach (var quote in MonthlyStockprice.StockRates())
             {
                 StockBuysOverTwelveMonths += MonthlyInvestRate / quote;

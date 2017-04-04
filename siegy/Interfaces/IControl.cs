@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace siegy.Interfaces
+namespace Siegy.Interfaces
 {
     internal interface IControl
     {
