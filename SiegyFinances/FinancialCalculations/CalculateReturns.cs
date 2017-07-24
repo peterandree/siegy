@@ -8,15 +8,10 @@ namespace SiegyFinances.FinancialCalculations
     {
         public static InvestmentReturns Calculate(int p_endYear)
         {
-            decimal ammount;
-            decimal divPerStock;
-            decimal stockValue;
-            decimal investedCapital;
+            //var averageReturnOnInvest = new List<decimal>(); todo pk: show capital gains for every investment year
 
-            var averageReturnOnInvest = new List<decimal>();
-
-            ammount = 0m;
-            investedCapital = 0m;
+            var ammount = 0m;
+            var investedCapital = 0m;
             foreach (InvestmentYear currentYear in AllPossibleYearsForMe.AllYears())
             {
                 if (currentYear.Year <= p_endYear)
@@ -26,8 +21,8 @@ namespace SiegyFinances.FinancialCalculations
                 }
             }
 
-            stockValue = Factories.MonthlyStockQuotesFactory.Get(p_endYear).DividendDay;
-            divPerStock = Financial.GetDividend(p_endYear);
+            var stockValue = Factories.MonthlyStockQuotesFactory.Get(p_endYear).DividendDay;
+            var divPerStock = Financial.GetDividend(p_endYear);
 
             return new InvestmentReturns
             {

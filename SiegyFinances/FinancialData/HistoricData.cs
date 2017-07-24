@@ -6,9 +6,38 @@ namespace SiegyFinances.FinancialData
 {
     public static class HistoricData
     {
+        //The year where the dividend is payed IN not FOR, that youd be year minus 1
+        // in Euro
         public static decimal Dividend(int p_year)
         {
-            // in Euro
+            if (p_year > 2017) //Estimations according to http://www.finanzen.net/dividende/Siemens
+            {
+                switch (p_year)
+                {
+                    case 2018:
+                        {
+                            return 3.88m;
+                        }
+                    case 2019:
+                        {
+                            return 4.06m;
+                        }
+                    case 2020:
+                        {
+                            return 4.20m;
+                        }
+                    case 2021:
+                        {
+                            return 4.40m;
+                        }
+                    case 2022:
+                        {
+                            return 4.50m;
+                        }
+                }
+            }
+
+
             switch (p_year)
             {
                 case 2010:
@@ -32,7 +61,7 @@ namespace SiegyFinances.FinancialData
                     }
                 case 2017:
                     {
-                        return 3.7m;
+                        return 3.6m;
                     }
                 default:
                     {
@@ -50,6 +79,13 @@ namespace SiegyFinances.FinancialData
                 case 2013:
                     {
                         return 695m;
+                    }
+                case 2014:
+                case 2015:
+                case 2016:
+                case 2017:
+                    {
+                        return 720m;
                     }
                 default:
                     {
@@ -76,6 +112,10 @@ namespace SiegyFinances.FinancialData
             switch (pYear)
             {
                 //case 2018:
+                //case 2023:
+                //case 2028:
+                //case 2033:
+                //case 2038:
                 //    {
                 //        return 10m;//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!estimated
                 //    }

@@ -1,10 +1,4 @@
-﻿using SiegyFinances.Factories;
-using SiegyFinances.FinancialObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SiegyFinances.FinancialObjects;
 
 namespace SiegyFinances.FinancialData.Years
 {
@@ -12,16 +6,16 @@ namespace SiegyFinances.FinancialData.Years
     {
         public MonthlyStockQuotes2017()
         {
-            var lastQuote = 123.10m; //change when new informations are known
+            var lastQuote = 125.70m; //change when new informations are known
 
             lastQuote += lastQuote * (SpeculativeData.ExpectedYearlyStockValueRaiseInPercent);
-
+            
             this._DividendDay = 117.85m;
             this._February = 121.35m;
             this._March = 123.10m;
-            this._April = lastQuote;
-            this._May = lastQuote;
-            this._June = lastQuote;
+            this._April = 124.95m;
+            this._May = 130.05m;
+            this._June = 125.70m;
             this._July = lastQuote;
             this._August = lastQuote;
             this._September = lastQuote;

@@ -1,6 +1,5 @@
 ﻿using SiegyFinances.Factories;
 using SiegyFinances.FinancialData;
-using System.Collections.Generic;
 
 namespace SiegyFinances.Helpers
 {
@@ -35,7 +34,7 @@ namespace SiegyFinances.Helpers
 
             } while (dividend < 0);
 
-            return dividend + (back * SpeculativeData.ExpectedDividendsRaiseInEuro);
+            return dividend + (back  * SpeculativeData.ExpectedDividendsRaiseInEuro);
         }
 
         public static decimal GetDividendAtYearsStart(int p_year, decimal p_ammount)

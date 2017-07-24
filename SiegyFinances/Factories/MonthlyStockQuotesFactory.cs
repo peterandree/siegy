@@ -1,12 +1,6 @@
 ﻿using SiegyFinances.FinancialData;
 using SiegyFinances.FinancialData.Years;
-using SiegyFinances.FinancialObjects;
 using SiegyFinances.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SiegyFinances.Factories
 {
@@ -14,7 +8,7 @@ namespace SiegyFinances.Factories
     {
         public static IMonthlyStockQuotes Get(int p_year)
         {
-            var lastAtLeastPartiallyKnownYear = 2017;
+            const int lastAtLeastPartiallyKnownYear = 2017;
 
             switch (p_year)
             {
@@ -48,10 +42,9 @@ namespace SiegyFinances.Factories
                     }
                 default:
                     {
-                        var lastKnownQuotes = Get(lastAtLeastPartiallyKnownYear);
-
-                        var lastQuote = lastKnownQuotes.January;
+                        var lastQuote = Get(lastAtLeastPartiallyKnownYear).January;
                         lastQuote += lastQuote * (SpeculativeData.ExpectedYearlyStockValueRaiseInPercent * (p_year - lastAtLeastPartiallyKnownYear));
+                        
                         return new MonthlyStockQuotesFuture(lastQuote);
                     }
             }
