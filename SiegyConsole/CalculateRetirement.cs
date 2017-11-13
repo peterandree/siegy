@@ -1,11 +1,6 @@
 ﻿using SiegyConsole.Controls;
 using SiegyConsole.Models;
 using SiegyConsole.Views;
-using SiegyConsole.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using System.Text;
 
 namespace Siegy
 {
