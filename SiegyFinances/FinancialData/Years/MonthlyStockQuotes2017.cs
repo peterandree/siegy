@@ -6,7 +6,7 @@ namespace SiegyFinances.FinancialData.Years
     {
         public MonthlyStockQuotes2017()
         {
-            var lastQuote = 125.70m; //change when new informations are known
+            var lastQuote = 110.20m; //change when new informations are known
 
             lastQuote += lastQuote * (SpeculativeData.ExpectedYearlyStockValueRaiseInPercent);
             
@@ -16,8 +16,8 @@ namespace SiegyFinances.FinancialData.Years
             this._April = 124.95m;
             this._May = 130.05m;
             this._June = 125.70m;
-            this._July = lastQuote;
-            this._August = lastQuote;
+            this._July = 120.30m;
+            this._August = 110.20m;
             this._September = lastQuote;
             this._October = lastQuote;
             this._November = lastQuote;

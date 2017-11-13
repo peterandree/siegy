@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace SiegyFinances.FinancialData
@@ -10,14 +9,10 @@ namespace SiegyFinances.FinancialData
         // in Euro
         public static decimal Dividend(int p_year)
         {
-            if (p_year > 2017) //Estimations according to http://www.finanzen.net/dividende/Siemens
+            if (p_year > 2018) //Estimations according to http://www.finanzen.net/dividende/Siemens
             {
                 switch (p_year)
                 {
-                    case 2018:
-                        {
-                            return 3.88m;
-                        }
                     case 2019:
                         {
                             return 4.06m;
@@ -63,6 +58,10 @@ namespace SiegyFinances.FinancialData
                     {
                         return 3.6m;
                     }
+                case 2018:
+                    {
+                        return 3.7m;
+                    }
                 default:
                     {
                         return -1m;
@@ -105,20 +104,22 @@ namespace SiegyFinances.FinancialData
             yield return new KeyValuePair<int, decimal>(2015, 120m);
             yield return new KeyValuePair<int, decimal>(2016, 172m);
             yield return new KeyValuePair<int, decimal>(2017, 179m);
+            yield return new KeyValuePair<int, decimal>(2018, 232m);
         }
 
         public static decimal ProfitSharingStocks(int pYear)
         {
             switch (pYear)
             {
+                case 9999:
                 //case 2018:
                 //case 2023:
                 //case 2028:
                 //case 2033:
                 //case 2038:
-                //    {
-                //        return 10m;//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!estimated
-                //    }
+                    {
+                        return 10m;//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!estimated
+                    }
                 default:
                     {
                         return 0m;
