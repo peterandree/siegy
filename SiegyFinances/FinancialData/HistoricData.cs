@@ -32,7 +32,6 @@ namespace SiegyFinances.FinancialData
                 }
             }
 
-
             switch (p_year)
             {
                 case 2010:
@@ -112,13 +111,14 @@ namespace SiegyFinances.FinancialData
             switch (pYear)
             {
                 case 9999:
-                //case 2018:
-                //case 2023:
-                //case 2028:
-                //case 2033:
-                //case 2038:
+                    //case 2018:
+                    //case 2023:
+                    //case 2028:
+                    //case 2033:
+                    //case 2038:
                     {
                         return 10m;//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!estimated
+                        //between 2 and 3,750€ divided by stock price
                     }
                 default:
                     {
