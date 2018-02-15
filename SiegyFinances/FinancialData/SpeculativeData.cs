@@ -8,6 +8,5 @@
 
         //Statistics says 6.8% for the last 15 years or so
         public static decimal ExpectedYearlyStockValueRaiseInPercent { get; set; } = 0.03m; // == 3%
-
     }
 }

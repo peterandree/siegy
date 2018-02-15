@@ -40,11 +40,15 @@ namespace SiegyFinances.Factories
                     {
                         return new MonthlyStockQuotes2017();
                     }
+                case 2018:
+                    {
+                        return new MonthlyStockQuotes2018();
+                    }
                 default:
                     {
                         var lastQuote = Get(lastAtLeastPartiallyKnownYear).January;
                         lastQuote += lastQuote * (SpeculativeData.ExpectedYearlyStockValueRaiseInPercent * (p_year - lastAtLeastPartiallyKnownYear));
-                        
+
                         return new MonthlyStockQuotesFuture(lastQuote);
                     }
             }

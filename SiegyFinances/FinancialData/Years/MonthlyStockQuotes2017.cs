@@ -6,11 +6,7 @@ namespace SiegyFinances.FinancialData.Years
     {
         public MonthlyStockQuotes2017()
         {
-            var lastQuote = 116.20m; //change when new informations are known
-
-            lastQuote += lastQuote * (SpeculativeData.ExpectedYearlyStockValueRaiseInPercent);
-
-            this._DividendDay = 117.85m;
+            this._DividendDay = 112.121m;
             this._February = 121.35m;
             this._March = 123.10m;
             this._April = 124.95m;
@@ -22,7 +18,7 @@ namespace SiegyFinances.FinancialData.Years
             this._October = 119.05m;
             this._November = 115.90m;
             this._December = 116.20m;
-            this._January = lastQuote;
+            this._January = 122.10m;
         }
     }
 }
