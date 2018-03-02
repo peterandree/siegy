@@ -8,7 +8,7 @@ namespace SiegyFinances.Factories
     {
         public static IMonthlyStockQuotes Get(int p_year)
         {
-            const int lastAtLeastPartiallyKnownYear = 2017;
+            const int lastAtLeastPartiallyKnownYear = 2018;
 
             switch (p_year)
             {

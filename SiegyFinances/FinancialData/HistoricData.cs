@@ -110,14 +110,18 @@ namespace SiegyFinances.FinancialData
         {
             switch (pYear)
             {
+                case 2018:
+                    {
+                        return 26.241m;
+                    }
+
                 case 9999:
-                    //case 2018:
                     //case 2023:
                     //case 2028:
                     //case 2033:
                     //case 2038:
                     {
-                        return 10m;//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!estimated
+                        return 30m;//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!estimated
                         //between 2 and 3,750€ divided by stock price
                     }
                 default:
