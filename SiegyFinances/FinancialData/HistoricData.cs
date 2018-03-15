@@ -112,7 +112,7 @@ namespace SiegyFinances.FinancialData
             {
                 case 2018:
                     {
-                        return 26.241m;
+                        return 13.874m;
                     }
 
                 case 9999:
@@ -121,7 +121,7 @@ namespace SiegyFinances.FinancialData
                     //case 2033:
                     //case 2038:
                     {
-                        return 30m;//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!estimated
+                        return 15m;//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!estimated
                         //between 2 and 3,750€ divided by stock price
                     }
                 default:
