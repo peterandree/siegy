@@ -8,8 +8,8 @@ namespace SiegyConsole.Controls
 {
     internal class CalculateRetirementControl : IControl
     {
-        private IView _view;
-        private IModel _model;
+        private readonly IView _view;
+        private readonly IModel _model;
 
         public CalculateRetirementControl(IView view, IModel model)
         {
@@ -28,7 +28,7 @@ namespace SiegyConsole.Controls
 
             while (!"X".Equals(input, StringComparison.OrdinalIgnoreCase))
             {
-                if (int.TryParse(input,  out int inputYear))
+                if (int.TryParse(input, out int inputYear))
                 {
                     _model.SetEndYear(inputYear);
                 }
