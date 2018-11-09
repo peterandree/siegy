@@ -1,0 +1,54 @@
+﻿[
+  {
+    "month": "DividendDay",
+    "stockvalue     ": 0.001
+  },
+  {
+    "month": "February",
+    "stockvalue     ": 91.66565
+  },
+  {
+    "month": "March",
+    "stockvalue     ": 999
+  },
+  {
+    "month": "April",
+    "stockvalue     ": 999
+  },
+  {
+    "month": "May",
+    "stockvalue     ": 999
+  },
+  {
+    "month": "June",
+    "stockvalue     ": 999
+  },
+  {
+    "month": "July",
+    "stockvalue     ": 999
+  },
+  {
+    "month": "August",
+    "stockvalue     ": 999
+  },
+  {
+    "month": "September",
+    "stockvalue     ": 999
+  },
+  {
+    "month": "October",
+    "stockvalue     ": 999
+  },
+  {
+    "month": "November",
+    "stockvalue     ": 999
+  },
+  {
+    "month": "December",
+    "stockvalue     ": 999
+  },
+  {
+    "month": "January",
+    "stockvalue     ": 999
+  }
+]

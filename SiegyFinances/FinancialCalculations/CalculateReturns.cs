@@ -1,6 +1,5 @@
 ﻿using SiegyFinances.FinancialObjects;
 using SiegyFinances.Helpers;
-using System.Collections.Generic;
 
 namespace SiegyFinances.FinancialCalculations
 {
@@ -32,7 +31,6 @@ namespace SiegyFinances.FinancialCalculations
                 StockValue = stockValue,
                 InvestedCapital = investedCapital
             };
-
         }
     }
 }

@@ -27,7 +27,7 @@ namespace SiegyFinances.FinancialObjects
             OneTimeInvest = Financial.GetYearlyRate(Year);
             MonthlyStockprice = MonthlyStockQuotesFactory.Get(Year);
             OneTimeBoughtStocks = OneTimeInvest / MonthlyStockprice.February;
-                       
+
             foreach (var quote in MonthlyStockprice.StockRates())
             {
                 StockBuysOverTwelveMonths += MonthlyInvestRate / quote;
@@ -44,7 +44,7 @@ namespace SiegyFinances.FinancialObjects
                     {
                         ammount = OneTimeBoughtStocks;
                         ammount += StockBuysOverTwelveMonths;
-                        ammount += FinancialData.HistoricData.ProfitSharingStocks(Year);
+                        ammount += Financial.ProfitSharingStocks(Year);
                         return ammount;
                     }
                 case 3:

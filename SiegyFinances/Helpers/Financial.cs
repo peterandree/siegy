@@ -16,25 +16,26 @@ namespace SiegyFinances.Helpers
             return rate;
         }
 
-        public static decimal GetYearlyRate(int year) => HistoricData.OneTimeRate(year);
+        public static decimal GetYearlyRate(int p_year)
+        {
+            return (HistoricData.OneTimeRate.TryGetValue(p_year, out decimal div)) ? div : FinancialConstants.DEFAULT_ONE_TIME_RATE;
+        }
 
         public static decimal GetDividend(int p_year)
         {
-            var dividend = HistoricData.Dividend(p_year);
-            if (dividend >= 0)
+            if (HistoricData.Dividend.TryGetValue(p_year, out decimal dividend))
             {
                 return dividend;
             }
-
-            var back = 0;
-            do
+            else
             {
-                back++;
-                dividend = HistoricData.Dividend(p_year - back);
-
-            } while (dividend < 0);
-
-            return dividend + (back  * SpeculativeData.ExpectedDividendsRaiseInEuro);
+                var back = 1;
+                while (!(HistoricData.Dividend.TryGetValue(p_year - back, out dividend)))
+                {
+                    back++;
+                }
+                return dividend + (back * SpeculativeData.ExpectedDividendsRaiseInEuro);
+            }
         }
 
         public static decimal GetDividendAtYearsStart(int p_year, decimal p_ammount)
@@ -44,6 +45,11 @@ namespace SiegyFinances.Helpers
             return AdjustForTaxOnCapitalGains(grossDiv) / MonthlyStockQuotesFactory.Get(p_year).DividendDay;
         }
 
-        public static decimal AdjustForTaxOnCapitalGains(decimal p_gross) => p_gross - (p_gross * 0.26375m);
+        public static decimal AdjustForTaxOnCapitalGains(decimal p_gross) => p_gross - (p_gross * FinancialConstants.TAX_ADJUSTMENT);
+
+        public static decimal ProfitSharingStocks(int p_year)
+        {
+            return (HistoricData.ProfitSharingStocksLookup.TryGetValue(p_year, out decimal div)) ? div : 0m;
+        }
     }
 }
