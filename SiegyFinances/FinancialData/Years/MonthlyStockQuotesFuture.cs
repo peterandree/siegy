@@ -15,19 +15,19 @@ namespace SiegyFinances.FinancialData.Years
 
         public MonthlyStockQuotesFuture(decimal p_guess)
         {
-            this._DividendDay = p_guess;
-            this._February = p_guess;
-            this._March = p_guess;
-            this._April = p_guess;
-            this._May = p_guess;
-            this._June = p_guess;
-            this._July = p_guess;
-            this._August = p_guess;
-            this._September = p_guess;
-            this._October = p_guess;
-            this._November = p_guess;
-            this._December = p_guess;
-            this._January = p_guess;
+            DividendDay = p_guess;
+            February = p_guess;
+            March = p_guess;
+            April = p_guess;
+            May = p_guess;
+            June = p_guess;
+            July = p_guess;
+            August = p_guess;
+            September = p_guess;
+            October = p_guess;
+            November = p_guess;
+            December = p_guess;
+            January = p_guess;
         }
     }
 }

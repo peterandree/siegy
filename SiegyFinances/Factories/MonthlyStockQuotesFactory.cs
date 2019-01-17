@@ -4,53 +4,42 @@ using SiegyFinances.Interfaces;
 
 namespace SiegyFinances.Factories
 {
-    public static class MonthlyStockQuotesFactory
+    public class MonthlyStockQuotesFactory
     {
         public static IMonthlyStockQuotes Get(int p_year)
         {
-            const int lastAtLeastPartiallyKnownYear = 2018;
+            const int firstAtLeastPartiallyKnownYear = 2011;
+            const int lastAtLeastPartiallyKnownYear = 2018; //todo pk: determine dynamically the last known year
 
-            switch (p_year)
+            if (p_year < firstAtLeastPartiallyKnownYear)
             {
-                case 2011:
-                    {
-                        return new MonthlyStockQuotes2011();
-                    }
-                case 2012:
-                    {
-                        return new MonthlyStockQuotes2012();
-                    }
-                case 2013:
-                    {
-                        return new MonthlyStockQuotes2013();
-                    }
-                case 2014:
-                    {
-                        return new MonthlyStockQuotes2014();
-                    }
-                case 2015:
-                    {
-                        return new MonthlyStockQuotes2015();
-                    }
-                case 2016:
-                    {
-                        return new MonthlyStockQuotes2016();
-                    }
-                case 2017:
-                    {
-                        return new MonthlyStockQuotes2017();
-                    }
-                case 2018:
-                    {
-                        return new MonthlyStockQuotes2018();
-                    }
-                default:
-                    {
-                        var lastQuote = Get(lastAtLeastPartiallyKnownYear).January;
-                        lastQuote += lastQuote * (SpeculativeData.ExpectedYearlyStockValueRaiseInPercent * (p_year - lastAtLeastPartiallyKnownYear));
+                throw new System.ArgumentException($"Year '{p_year}' is out of range");
+            }
+            else if (p_year <= lastAtLeastPartiallyKnownYear)
+            {
+                var quotes = Helpers.FileHelpers.FillWithQuotes(p_year);
 
-                        return new MonthlyStockQuotesFuture(lastQuote);
+                var lastKnownQuote = 0m;
+
+                for (int i = 0; i < quotes.StockRatesListed().Count; i++)
+                {
+                    if (quotes.StockRatesListed()[i] > 0m)
+                    {
+                        lastKnownQuote = quotes.StockRatesListed()[i];
                     }
+                    else
+                    {
+                        quotes.UpdateStockRatedListed(i, lastKnownQuote);
+                    }
+                }
+                return quotes;
+            }
+            else
+            {
+                var lastQuote = Get(lastAtLeastPartiallyKnownYear).January;
+                lastQuote += lastQuote * (SpeculativeData.ExpectedYearlyStockValueRaiseInPercent * (p_year - lastAtLeastPartiallyKnownYear));
+
+                return new MonthlyStockQuotesFuture(lastQuote);
             }
         }
     }
