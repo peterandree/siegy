@@ -2,26 +2,66 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SiegyFinances.FinancialObjects
 {
     public class MonthlyStockQuotes : IMonthlyStockQuotes
     {
-        public decimal February { get; set; }
-        public decimal March { get; set; }
-        public decimal April { get; set; }
-        public decimal May { get; set; }
-        public decimal June { get; set; }
-        public decimal July { get; set; }
-        public decimal August { get; set; }
-        public decimal September { get; set; }
-        public decimal October { get; set; }
-        public decimal November { get; set; }
-        public decimal December { get; set; }
-        public decimal January { get; set; }
-        public decimal DividendDay { get; set; }
+        public decimal February { get;private set; }
+        public decimal March { get; private set; }
+        public decimal April { get; private set; }
+        public decimal May { get; private set; }
+        public decimal June { get; private set; }
+        public decimal July { get; private set; }
+        public decimal August { get; private set; }
+        public decimal September { get; private set; }
+        public decimal October { get; private set; }
+        public decimal November { get; private set; }
+        public decimal December { get; private set; }
+        public decimal January { get; private set; }
+        public decimal DividendDay { get;private set; }
+
+
+        private MonthlyStockQuotes()
+        {
+
+        }
+
+        public MonthlyStockQuotes(MonthContainer months)
+        {
+            February = months.February;
+            March = months.March;
+            April = months.April;
+            May = months.May;
+            June = months.June;
+            July = months.July;
+            August = months.August;
+            September = months.September;
+            October = months.October;
+            November = months.November;
+            December = months.December;
+            January = months.January;
+            DividendDay = months.DividendDay;
+
+        }
+
+        public MonthlyStockQuotes(decimal p_guess)
+        {
+            DividendDay = p_guess;
+            February = p_guess;
+            March = p_guess;
+            April = p_guess;
+            May = p_guess;
+            June = p_guess;
+            July = p_guess;
+            August = p_guess;
+            September = p_guess;
+            October = p_guess;
+            November = p_guess;
+            December = p_guess;
+            January = p_guess;
+        }
+
 
         public IEnumerable<decimal> StockRates()
         {

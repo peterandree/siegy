@@ -5,9 +5,9 @@ using System.IO;
 
 namespace SiegyFinances.Helpers
 {
-    public static class FileHelpers
+    public static partial class FileHelpers
     {
-        private static readonly string pathToFinancialData = Path.Combine(System.IO.Directory.GetCurrentDirectory(), "FinancialData");
+        private static readonly string pathToFinancialData = Path.Combine(Directory.GetCurrentDirectory(), "FinancialData");
         private static readonly string pathToFinancialDataMonths = Path.Combine(pathToFinancialData, "Years");
 
         internal static Dictionary<int, decimal> GetDicOfIntDecimalFromJson(string filename)
@@ -20,13 +20,13 @@ namespace SiegyFinances.Helpers
             }
         }
 
-        internal static MonthlyStockQuotes FillWithQuotes(int p_year)
+        internal static MonthContainer FillWithQuotes(int p_year)
         {
             string path = Path.Combine(pathToFinancialDataMonths, $"MonthlyStockQuotes{p_year}.json");
             using (StreamReader r = new StreamReader(path))
             {
                 string json = r.ReadToEnd();
-                return JsonConvert.DeserializeObject<MonthlyStockQuotes>(json, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+                return JsonConvert.DeserializeObject<MonthContainer>(json, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
             }
         }
     }
