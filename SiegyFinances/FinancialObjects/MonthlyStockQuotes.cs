@@ -2,12 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using static SiegyFinances.Enums.MonthlyStockQuotes;
 
 namespace SiegyFinances.FinancialObjects
 {
-    public class MonthlyStockQuotes : IMonthlyStockQuotes
+    public partial class MonthlyStockQuotes : IMonthlyStockQuotes
     {
-        public decimal February { get;private set; }
+        public decimal February { get; private set; }
         public decimal March { get; private set; }
         public decimal April { get; private set; }
         public decimal May { get; private set; }
@@ -19,12 +20,10 @@ namespace SiegyFinances.FinancialObjects
         public decimal November { get; private set; }
         public decimal December { get; private set; }
         public decimal January { get; private set; }
-        public decimal DividendDay { get;private set; }
-
+        public decimal DividendDay { get; private set; }
 
         private MonthlyStockQuotes()
         {
-
         }
 
         public MonthlyStockQuotes(MonthContainer months)
@@ -42,7 +41,6 @@ namespace SiegyFinances.FinancialObjects
             December = months.December;
             January = months.January;
             DividendDay = months.DividendDay;
-
         }
 
         public MonthlyStockQuotes(decimal p_guess)
@@ -61,7 +59,6 @@ namespace SiegyFinances.FinancialObjects
             December = p_guess;
             January = p_guess;
         }
-
 
         public IEnumerable<decimal> StockRates()
         {
@@ -82,72 +79,67 @@ namespace SiegyFinances.FinancialObjects
 
         public IList<decimal> StockRatesListed() => StockRates().ToList();
 
-        public void UpdateStockRatedListed(int monthNumber, decimal lastKnownQuote)
+        public void UpdateStockRatedListed(int monthNumber, decimal lastKnownQuote)//todo: pk refactor this clunky code
         {
-            StockMonth mon = (StockMonth)Enum.ToObject(typeof(StockMonth), monthNumber);
-            switch (mon)
+            UpdateStockRatedListed((BuyEvent)Enum.ToObject(typeof(BuyEvent), monthNumber), lastKnownQuote);
+        }
+
+        public void UpdateStockRatedListed(BuyEvent buyEvent, decimal lastKnownQuote) //todo: pk refactor this clunky code
+        {
+            switch (buyEvent)
             {
-                case StockMonth.Feb:
+                case BuyEvent.Feb:
                     February = lastKnownQuote;
                     break;
 
-                case StockMonth.Mar:
+                case BuyEvent.Mar:
                     March = lastKnownQuote;
                     break;
 
-                case StockMonth.Apr:
+                case BuyEvent.Apr:
                     April = lastKnownQuote;
                     break;
 
-                case StockMonth.May:
+                case BuyEvent.May:
                     May = lastKnownQuote;
                     break;
 
-                case StockMonth.Jun:
+                case BuyEvent.Jun:
                     June = lastKnownQuote;
                     break;
 
-                case StockMonth.Jul:
+                case BuyEvent.Jul:
                     July = lastKnownQuote;
                     break;
 
-                case StockMonth.Sep:
+                case BuyEvent.Aug:
+                    August = lastKnownQuote;
+                    break;
+
+                case BuyEvent.Sep:
                     September = lastKnownQuote;
                     break;
 
-                case StockMonth.Oct:
+                case BuyEvent.Oct:
                     October = lastKnownQuote;
                     break;
 
-                case StockMonth.Nov:
+                case BuyEvent.Nov:
                     November = lastKnownQuote;
                     break;
 
-                case StockMonth.Dec:
+                case BuyEvent.Dec:
                     December = lastKnownQuote;
                     break;
 
-                case StockMonth.Jan:
+                case BuyEvent.Jan:
                     January = lastKnownQuote;
                     break;
-            }
-        }
 
-        //todo pk: move that elsewhere
-        public enum StockMonth
-        {
-            Feb = 0,
-            Mar = 1,
-            Apr = 2,
-            May = 3,
-            Jun = 4,
-            Jul = 5,
-            Aug = 6,
-            Sep = 7,
-            Oct = 8,
-            Nov = 9,
-            Dec = 10,
-            Jan = 11
+                case BuyEvent.DividendDay:
+                    DividendDay = lastKnownQuote;
+                    break;
+            }
         }
     }
 }
