@@ -9,8 +9,66 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="FinancialData\HistoricDividend.json" />
+    <None Remove="FinancialData\HistoricMonthlyRate.json" />
+    <None Remove="FinancialData\HistoricOneTimeRate.json" />
+    <None Remove="FinancialData\HistoricProfitSharingStocks.json" />
+    <None Remove="FinancialData\Years\MonthlyStockQuotes2011.json" />
+    <None Remove="FinancialData\Years\MonthlyStockQuotes2012.json" />
+    <None Remove="FinancialData\Years\MonthlyStockQuotes2013.json" />
+    <None Remove="FinancialData\Years\MonthlyStockQuotes2014.json" />
+    <None Remove="FinancialData\Years\MonthlyStockQuotes2015.json" />
+    <None Remove="FinancialData\Years\MonthlyStockQuotes2016.json" />
+    <None Remove="FinancialData\Years\MonthlyStockQuotes2017.json" />
+    <None Remove="FinancialData\Years\MonthlyStockQuotes2018.json" />
     <None Remove="FinancialData\Years\MonthlyStockQuotes2018cs" />
+    <None Remove="FinancialData\Years\MonthlyStockQuotes2019.json" />
     <None Remove="FinancialData\Years\MonthlyStockQuotes2020.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="FinancialData\HistoricDividend.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FinancialData\HistoricMonthlyRate.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FinancialData\HistoricOneTimeRate.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FinancialData\Years\MonthlyStockQuotes2011.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="FinancialData\HistoricProfitSharingStocks.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FinancialData\Years\MonthlyStockQuotes2012.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FinancialData\Years\MonthlyStockQuotes2013.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FinancialData\Years\MonthlyStockQuotes2014.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FinancialData\Years\MonthlyStockQuotes2015.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FinancialData\Years\MonthlyStockQuotes2016.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FinancialData\Years\MonthlyStockQuotes2017.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FinancialData\Years\MonthlyStockQuotes2018.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FinancialData\Years\MonthlyStockQuotes2019.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
@@ -21,48 +79,6 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>C:\Program Files\dotnet\sdk\NuGetFallbackFolder\newtonsoft.json\10.0.1\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
     </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="FinancialData\HistoricDividend.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="FinancialData\HistoricMonthlyRate.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="FinancialData\HistoricOneTimeRate.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="FinancialData\HistoricProfitSharingStocks.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="FinancialData\Years\MonthlyStockQuotes2011.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="FinancialData\Years\MonthlyStockQuotes2012.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="FinancialData\Years\MonthlyStockQuotes2013.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="FinancialData\Years\MonthlyStockQuotes2014.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="FinancialData\Years\MonthlyStockQuotes2015.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="FinancialData\Years\MonthlyStockQuotes2016.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="FinancialData\Years\MonthlyStockQuotes2017.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="FinancialData\Years\MonthlyStockQuotes2019.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="FinancialData\Years\MonthlyStockQuotes2018.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 
 </Project>
