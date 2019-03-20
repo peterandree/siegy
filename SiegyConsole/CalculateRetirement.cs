@@ -10,7 +10,7 @@ namespace Siegy
 
         private static void Begin()
         {
-            var view = new CalculateRetirementView();
+            var view = new CalculateRetirementConsoleView();
             var model = new CalculateRetirementModel();
             var control = new CalculateRetirementControl(view, model);
             control.Run(2040);

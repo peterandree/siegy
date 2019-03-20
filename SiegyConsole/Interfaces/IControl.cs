@@ -9,5 +9,7 @@ namespace SiegyConsole.Interfaces
     internal interface IControl
     {
         void Run(int startYear);
+
+        string ExitCondition { get; }
     }
 }

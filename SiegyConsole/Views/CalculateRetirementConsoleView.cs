@@ -5,7 +5,7 @@ using System;
 
 namespace SiegyConsole.Views
 {
-    internal class CalculateRetirementView : IView
+    internal class CalculateRetirementConsoleView : IView
     {
         private IModel _model;
 
@@ -37,7 +37,7 @@ namespace SiegyConsole.Views
 
         public string WaitForInput()
         {
-            Console.WriteLine("Enter a year between 2012 and 2040 to continue or \"x\" to abort calculation ");
+            Console.WriteLine($"Enter a year between 2012 and 2040 to continue or \"{Controller.ExitCondition}\" to abort calculation ");
             return Console.ReadLine();
         }
     }

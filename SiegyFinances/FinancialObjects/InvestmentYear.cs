@@ -36,30 +36,30 @@ namespace SiegyFinances.FinancialObjects
 
         public decimal AccumulatedStocks(int pTillYear)
         {
-            decimal ammount;
+            decimal numberOfStocks;
 
             switch (pTillYear - Year)
             {
                 case 0:
                     {
-                        ammount = OneTimeBoughtStocks;
-                        ammount += StockBuysOverTwelveMonths;
-                        ammount += Financial.ProfitSharingStocks(Year);
-                        return ammount;
+                        numberOfStocks = OneTimeBoughtStocks;
+                        numberOfStocks += StockBuysOverTwelveMonths;
+                        numberOfStocks += Financial.ProfitSharingStocks(Year);
+                        return numberOfStocks;
                     }
                 case 3:
                     {
-                        ammount = AccumulatedStocks(pTillYear - 1);
-                        ammount += Financial.GetDividendAtYearsStart(pTillYear, ammount);
-                        ammount += StockBuysOverTwelveMonths / 3; //this used to happen in year 4, but changed to year 3 end of 2015 (email Fr 27.11.2015 16:56). Difference is ignored because of the low significance in this long term prediction
-                        ammount += OneTimeBoughtStocks / 3;
-                        return ammount;
+                        numberOfStocks = AccumulatedStocks(pTillYear - 1);
+                        numberOfStocks += Financial.GetDividendAtYearsStart(pTillYear, numberOfStocks);
+                        numberOfStocks += StockBuysOverTwelveMonths / 3; //this used to happen in year 4, but changed to year 3 end of 2015 (email Fr 27.11.2015 16:56). Difference is ignored because of the low significance in this long term prediction
+                        numberOfStocks += OneTimeBoughtStocks / 3;
+                        return numberOfStocks;
                     }
                 default:
                     {
-                        ammount = AccumulatedStocks(pTillYear - 1);
-                        ammount += Financial.GetDividendAtYearsStart(pTillYear, ammount);
-                        return ammount;
+                        numberOfStocks = AccumulatedStocks(pTillYear - 1);
+                        numberOfStocks += Financial.GetDividendAtYearsStart(pTillYear, numberOfStocks);
+                        return numberOfStocks;
                     }
             }
         }

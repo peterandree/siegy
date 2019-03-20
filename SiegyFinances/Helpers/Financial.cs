@@ -38,18 +38,10 @@ namespace SiegyFinances.Helpers
             }
         }
 
-        public static decimal GetDividendAtYearsStart(int p_year, decimal p_ammount)
-        {
-            var grossDiv = p_ammount * Financial.GetDividend(p_year);
-
-            return AdjustForTaxOnCapitalGains(grossDiv) / MonthlyStockQuotesFactory.Get(p_year).DividendDay;
-        }
+        public static decimal GetDividendAtYearsStart(int p_year, decimal p_numberOfStocks) => AdjustForTaxOnCapitalGains(p_numberOfStocks * GetDividend(p_year)) / MonthlyStockQuotesFactory.Get(p_year).DividendDay;
 
         public static decimal AdjustForTaxOnCapitalGains(decimal p_gross) => p_gross - (p_gross * FinancialConstants.TAX_ADJUSTMENT);
 
-        public static decimal ProfitSharingStocks(int p_year)
-        {
-            return (HistoricData.ProfitSharingStocksLookup.TryGetValue(p_year, out decimal div)) ? div : 0m;
-        }
+        public static decimal ProfitSharingStocks(int p_year) => HistoricData.ProfitSharingStocksLookup.TryGetValue(p_year, out decimal div) ? div : 0m;
     }
 }
