@@ -1,6 +1,5 @@
-﻿using SiegyConsole.Interfaces;
-using SiegyConsole.Helpers;
-using SiegyFinances.FinancialObjects;
+﻿using SiegyConsole.Helpers;
+using SiegyConsole.Interfaces;
 using System;
 
 namespace SiegyConsole.Views
@@ -21,18 +20,22 @@ namespace SiegyConsole.Views
         {
             Console.ForegroundColor = ConsoleColor.White;
 
-            InvestmentReturns returns = _model.investmentReturns;
+            var returns = _model.InvestmentReturns;
+            var endyear = returns.Endyear;
+            var totalValue = returns.Ammount * returns.StockValue;
 
             Display.ConWriteLineFinancial("Total investment: {0}", returns.InvestedCapital);
 
-            Display.ConWriteLineNumber("Number of shares in year {0}: {1}", returns.Endyear, returns.Ammount);
+            Display.ConWriteLineNumber("Number of shares in year {0}: {1}", endyear, returns.Ammount);
 
-            Display.ConWriteLineFinancial("Value of one share in year {0}: {1}", returns.Endyear, returns.StockValue);
-            Display.ConWriteLineFinancial("Total value of shares in year {0}: {1}", returns.Endyear, returns.Ammount * returns.StockValue);
+            Display.ConWriteLineFinancial("Value of one share in year {0}: {1}", endyear, returns.StockValue);
+            Display.ConWriteLineFinancial("Total value of shares in year {0}: {1}", endyear, totalValue);
 
-            Display.ConWriteLineFinancial("Estimated dividend per share in year {0}: {1}", returns.Endyear, returns.DivPerStock);
+            Display.ConWriteLineFinancial("Estimated dividend per share in year {0}: {1}", endyear, returns.DivPerStock);
 
-            Display.ConWriteLineFinancial("Estimated dividends payment in year {0}: {1}", returns.Endyear, returns.Ammount * returns.DivPerStock);
+            Display.ConWriteLineFinancial("Estimated dividends payment in year {0}: {1}", endyear, returns.Ammount * returns.DivPerStock);
+
+            Display.ConWriteLineNumber("Total return in year {0}: {1}%", endyear, (totalValue - returns.InvestedCapital) * 100 / returns.InvestedCapital);
         }
 
         public string WaitForInput()

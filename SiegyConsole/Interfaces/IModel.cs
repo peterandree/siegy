@@ -2,9 +2,9 @@
 
 namespace SiegyConsole.Interfaces
 {
-    internal interface IModel:ISubject
+    internal interface IModel : ISubject
     {
-        InvestmentReturns investmentReturns { get; }
+        InvestmentReturns InvestmentReturns { get; }
 
         void SetEndYear(int p_endyear);
     }

@@ -2,7 +2,12 @@
 {
     public static class SpeculativeData
     {
-        public static decimal ExpectedDividendsRaiseInEuro { get; set; } = 0.10m; // == 10 Cent
+        /*
+         * Information is that Siemens aims for a yearly raise in dividends of 4-5%.
+         * Calculations are done with 2.1% which roughly matches in the outcome the old
+         * cautious assumtion of a steady raise of 10 cent every year
+         */
+        public static decimal ExpectedDividendsRaiseInPercent { get; set; } = 0.021m; // == 2.1% percent
 
         public static decimal ExpectedPayRaiseInPercent { get; set; } = 0.02m; // == 2%
 

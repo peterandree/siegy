@@ -1,8 +1,6 @@
 ﻿using SiegyFinances.Factories;
 using SiegyFinances.Helpers;
 using SiegyFinances.Interfaces;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace SiegyFinances.FinancialObjects
 {
@@ -10,15 +8,15 @@ namespace SiegyFinances.FinancialObjects
     {
         public int Year { get; }
 
-        private decimal MonthlyInvestRate { get; set; }
+        private decimal MonthlyInvestRate { get; }
 
-        private decimal StockBuysOverTwelveMonths { get; set; }
+        private decimal StockBuysOverTwelveMonths { get; }
 
-        private decimal OneTimeInvest { get; set; }
+        private decimal OneTimeInvest { get; }
 
-        private decimal OneTimeBoughtStocks { get; set; }
+        private decimal OneTimeBoughtStocks { get; }
 
-        private IMonthlyStockQuotes MonthlyStockprice { get; set; }
+        private IMonthlyStockQuotes MonthlyStockprice { get; }
 
         public InvestmentYear(int pYear)
         {
@@ -34,11 +32,11 @@ namespace SiegyFinances.FinancialObjects
             }
         }
 
-        public decimal AccumulatedStocks(int pTillYear)
+        public decimal AccumulatedStocks(int p_tillYear)
         {
             decimal numberOfStocks;
 
-            switch (pTillYear - Year)
+            switch (p_tillYear - Year)
             {
                 case 0:
                     {
@@ -49,21 +47,21 @@ namespace SiegyFinances.FinancialObjects
                     }
                 case 3:
                     {
-                        numberOfStocks = AccumulatedStocks(pTillYear - 1);
-                        numberOfStocks += Financial.GetDividendAtYearsStart(pTillYear, numberOfStocks);
+                        numberOfStocks = AccumulatedStocks(p_tillYear - 1);
+                        numberOfStocks += Financial.GetDividendAtYearsStart(p_tillYear, numberOfStocks);
                         numberOfStocks += StockBuysOverTwelveMonths / 3; //this used to happen in year 4, but changed to year 3 end of 2015 (email Fr 27.11.2015 16:56). Difference is ignored because of the low significance in this long term prediction
                         numberOfStocks += OneTimeBoughtStocks / 3;
                         return numberOfStocks;
                     }
                 default:
                     {
-                        numberOfStocks = AccumulatedStocks(pTillYear - 1);
-                        numberOfStocks += Financial.GetDividendAtYearsStart(pTillYear, numberOfStocks);
+                        numberOfStocks = AccumulatedStocks(p_tillYear - 1);
+                        numberOfStocks += Financial.GetDividendAtYearsStart(p_tillYear, numberOfStocks);
                         return numberOfStocks;
                     }
             }
         }
 
-        public decimal InvestedCapital() => (OneTimeInvest / 2) + MonthlyInvestRate * 12m;
+        public decimal InvestedCapital() => (OneTimeInvest / 2) + (MonthlyInvestRate * 12m);
     }
 }

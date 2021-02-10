@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Globalization;
-using System.Threading;
 
 namespace SiegyConsole.Helpers
 {
     //todo pk: changes to .net Core brought some regressions regarding specuial characters
-        internal static class Display
+    internal static class Display
     {
         private static NumberFormatInfo EuroFormat()
         {
@@ -30,13 +29,11 @@ namespace SiegyConsole.Helpers
             Console.WriteLine(string.Format(p_line, p_jahr.ToString(), Math.Round(p_value, 2).ToString()));
         }
 
-
         public static string ToCurrency(this decimal value, string cultureName)
 
         {
             CultureInfo currentCulture = new CultureInfo(cultureName);
-            return (string.Format(currentCulture, "{0:C}", value));
-
+            return string.Format(currentCulture, "{0:C}", value);
         }
     }
 }

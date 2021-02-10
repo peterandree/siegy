@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SiegyConsole.Interfaces
+﻿namespace SiegyConsole.Interfaces
 {
-    internal interface IControl
+    public interface IControl
     {
         void Run(int startYear);
 

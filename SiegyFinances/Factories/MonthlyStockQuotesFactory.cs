@@ -10,7 +10,7 @@ namespace SiegyFinances.Factories
         public static IMonthlyStockQuotes Get(int p_year)
         {
             const int firstAtLeastPartiallyKnownYear = 2011;
-            const int lastAtLeastPartiallyKnownYear = 2019; //todo pk: determine dynamically the last known year
+            const int lastAtLeastPartiallyKnownYear = 2020; //todo pk: determine dynamically the last known year
 
             if (p_year < firstAtLeastPartiallyKnownYear)
             {
@@ -22,7 +22,7 @@ namespace SiegyFinances.Factories
 
                 var lastKnownQuote = 0.0m;
 
-                for (int i = 0; i < quotes.StockRatesListed().Count; i++)//don't use the enums here to preserve the upward logic of the months
+                for (int i = 0; i < quotes.StockRatesListed().Count; i++) //don't use the enums here to preserve the upward logic of the months
                 {
                     if (quotes.StockRatesListed()[i] > 0m)
                     {

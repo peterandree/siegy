@@ -1,6 +1,6 @@
-﻿using SiegyFinances.FinancialCalculations;
+﻿using SiegyConsole.Interfaces;
+using SiegyFinances.FinancialCalculations;
 using SiegyFinances.FinancialObjects;
-using SiegyConsole.Interfaces;
 using System.Collections.Generic;
 
 namespace SiegyConsole.Models
@@ -11,7 +11,7 @@ namespace SiegyConsole.Models
 
         private InvestmentReturns _investmentReturns = new InvestmentReturns();
 
-        public InvestmentReturns investmentReturns => _investmentReturns;
+        public InvestmentReturns InvestmentReturns => _investmentReturns;
 
         private int _endYear;
 
@@ -28,7 +28,6 @@ namespace SiegyConsole.Models
         }
 
         public void Calculate() => _investmentReturns = CalculateReturns.Calculate(_endYear);
-
 
         public void Attach(IObserver p_observer) => _observers.Add(p_observer);
 

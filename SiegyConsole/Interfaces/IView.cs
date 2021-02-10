@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SiegyConsole.Interfaces
+﻿namespace SiegyConsole.Interfaces
 {
-    internal interface IView:IObserver
+    internal interface IView : IObserver
     {
         void SetController(IControl controller);
 

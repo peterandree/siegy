@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SiegyFinances.FinancialObjects
+﻿namespace SiegyFinances.FinancialObjects
 {
-  public  class InvestmentReturns
+    public class InvestmentReturns
     {
         public decimal Ammount { get; set; }
         public int Endyear { get; set; }

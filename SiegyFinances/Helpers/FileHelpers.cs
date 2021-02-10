@@ -13,21 +13,17 @@ namespace SiegyFinances.Helpers
         internal static Dictionary<int, decimal> GetDicOfIntDecimalFromJson(string filename)
         {
             string path = Path.Combine(pathToFinancialData, filename);
-            using (StreamReader r = new StreamReader(path))
-            {
-                string json = r.ReadToEnd();
-                return JsonConvert.DeserializeObject<Dictionary<int, decimal>>(json);
-            }
+            using StreamReader r = new StreamReader(path);
+            string json = r.ReadToEnd();
+            return JsonConvert.DeserializeObject<Dictionary<int, decimal>>(json);
         }
 
         internal static MonthContainer FillWithQuotes(int p_year)
         {
             string path = Path.Combine(pathToFinancialDataMonths, $"MonthlyStockQuotes{p_year}.json");
-            using (StreamReader r = new StreamReader(path))
-            {
-                string json = r.ReadToEnd();
-                return JsonConvert.DeserializeObject<MonthContainer>(json, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
-            }
+            using StreamReader r = new StreamReader(path);
+            string json = r.ReadToEnd();
+            return JsonConvert.DeserializeObject<MonthContainer>(json, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
         }
     }
 }

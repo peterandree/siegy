@@ -1,8 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 
 //https://jeremylindsayni.wordpress.com/2016/11/20/creating-a-restful-web-api-template-in-net-core-1-1-part-1-returning-http-codes/
 

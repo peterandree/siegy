@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using SiegyFinances.Helpers;
+﻿using SiegyFinances.Helpers;
+using System.Collections.Generic;
 
 namespace SiegyFinances.FinancialData
 {
