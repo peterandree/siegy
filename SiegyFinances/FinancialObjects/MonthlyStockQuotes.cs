@@ -6,7 +6,7 @@ using static SiegyFinances.Enums.MonthlyStockQuotes;
 
 namespace SiegyFinances.FinancialObjects
 {
-    public partial class MonthlyStockQuotes : IMonthlyStockQuotes
+    public class MonthlyStockQuotes : IMonthlyStockQuotes
     {
         public decimal February { get; private set; }
         public decimal March { get; private set; }

@@ -32,7 +32,7 @@ namespace SiegyConsole.Helpers
         public static string ToCurrency(this decimal value, string cultureName)
 
         {
-            CultureInfo currentCulture = new CultureInfo(cultureName);
+            var currentCulture = new CultureInfo(cultureName);
             return string.Format(currentCulture, "{0:C}", value);
         }
     }

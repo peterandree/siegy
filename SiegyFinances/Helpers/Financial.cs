@@ -16,10 +16,7 @@ namespace SiegyFinances.Helpers
             return rate;
         }
 
-        public static decimal GetYearlyRate(int p_year)
-        {
-            return (HistoricData.OneTimeRate.TryGetValue(p_year, out decimal div)) ? div : FinancialConstants.DEFAULT_ONE_TIME_RATE;
-        }
+        public static decimal GetYearlyRate(int p_year) => HistoricData.OneTimeRate.TryGetValue(p_year, out decimal div) ? div : FinancialConstants.DEFAULT_ONE_TIME_RATE;
 
         public static decimal GetDividend(int p_year)
         {

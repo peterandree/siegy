@@ -8,7 +8,7 @@ namespace SiegyConsole.Controls
         private readonly IView _view;
         private readonly IModel _model;
 
-        public string ExitCondition { get { return "X"; } }
+        public string ExitCondition => "X";
 
         public CalculateRetirementControl(IView view, IModel model)
         {
