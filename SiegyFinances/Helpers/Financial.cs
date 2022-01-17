@@ -1,5 +1,5 @@
-﻿using SiegyFinances.Factories;
-using SiegyFinances.FinancialData;
+﻿using SiegyFinances.FinancialData;
+using SiegyFinances.FinancialObjects;
 
 namespace SiegyFinances.Helpers
 {
@@ -44,7 +44,7 @@ namespace SiegyFinances.Helpers
             return dividend;
         }
 
-        public static decimal GetDividendAtYearsStart(int p_year, decimal p_numberOfStocks) => AdjustForTaxOnCapitalGains(p_numberOfStocks * GetDividend(p_year), p_year) / MonthlyStockQuotesFactory.Get(p_year).DividendDay;
+        public static decimal GetDividendAtYearsStart(int p_year, decimal p_numberOfStocks) => AdjustForTaxOnCapitalGains(p_numberOfStocks * GetDividend(p_year), p_year) / MonthlyStockQuoteCollection.Instance.GetMonthlyStockQuotes(p_year).DividendDay;
 
         public static decimal AdjustForTaxOnCapitalGains(decimal p_gross, int p_year) => p_gross - (p_gross * FinancialConstants.TAX_ADJUSTMENT(p_year));
 

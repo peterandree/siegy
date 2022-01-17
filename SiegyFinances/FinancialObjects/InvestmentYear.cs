@@ -1,5 +1,4 @@
-﻿using SiegyFinances.Factories;
-using SiegyFinances.Helpers;
+﻿using SiegyFinances.Helpers;
 using SiegyFinances.Interfaces;
 
 namespace SiegyFinances.FinancialObjects
@@ -23,7 +22,7 @@ namespace SiegyFinances.FinancialObjects
             Year = pYear;
             MonthlyInvestRate = Financial.GetMonthlyRate(Year);
             OneTimeInvest = Financial.GetYearlyRate(Year);
-            MonthlyStockprice = MonthlyStockQuotesFactory.Get(Year);
+            MonthlyStockprice = MonthlyStockQuoteCollection.Instance.GetMonthlyStockQuotes(Year);
             OneTimeBoughtStocks = OneTimeInvest / MonthlyStockprice.February;
 
             foreach (var quote in MonthlyStockprice.StockRates())
@@ -37,7 +36,7 @@ namespace SiegyFinances.FinancialObjects
             decimal numberOfStocks;
 
 
- 
+
             switch (p_tillYear - Year)
             {
                 case 0:

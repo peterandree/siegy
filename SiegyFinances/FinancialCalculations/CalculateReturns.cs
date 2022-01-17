@@ -20,7 +20,7 @@ namespace SiegyFinances.FinancialCalculations
                 }
             }
 
-            var stockValue = Factories.MonthlyStockQuotesFactory.Get(p_endYear).January;
+            var stockValue = MonthlyStockQuoteCollection.Instance.GetMonthlyStockQuotes(p_endYear).January;
             var divPerStock = Financial.GetDividend(p_endYear);
 
             return new InvestmentReturns
