@@ -36,6 +36,8 @@ namespace SiegyFinances.FinancialObjects
         {
             decimal numberOfStocks;
 
+
+ 
             switch (p_tillYear - Year)
             {
                 case 0:

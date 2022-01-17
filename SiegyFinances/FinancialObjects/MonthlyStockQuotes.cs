@@ -89,56 +89,82 @@ namespace SiegyFinances.FinancialObjects
             switch (buyEvent)
             {
                 case BuyEvent.Feb:
-                    February = lastKnownQuote;
-                    break;
+                    {
+                        February = lastKnownQuote;
+                        break;
+                    }
 
                 case BuyEvent.Mar:
-                    March = lastKnownQuote;
-                    break;
+                    {
+                        March = lastKnownQuote;
+                        break;
+                    }
 
                 case BuyEvent.Apr:
-                    April = lastKnownQuote;
-                    break;
+                    {
+                        April = lastKnownQuote;
+                        break;
+                    }
 
                 case BuyEvent.May:
-                    May = lastKnownQuote;
-                    break;
+                    {
+                        May = lastKnownQuote;
+                        break;
+                    }
 
                 case BuyEvent.Jun:
-                    June = lastKnownQuote;
-                    break;
+                    {
+                        June = lastKnownQuote;
+                        break;
+                    }
 
                 case BuyEvent.Jul:
-                    July = lastKnownQuote;
-                    break;
+                    {
+                        July = lastKnownQuote;
+                        break;
+                    }
 
                 case BuyEvent.Aug:
-                    August = lastKnownQuote;
-                    break;
+                    {
+                        August = lastKnownQuote;
+                        break;
+                    }
 
                 case BuyEvent.Sep:
-                    September = lastKnownQuote;
-                    break;
+                    {
+                        September = lastKnownQuote;
+                        break;
+                    }
 
                 case BuyEvent.Oct:
-                    October = lastKnownQuote;
-                    break;
+                    {
+                        October = lastKnownQuote;
+                        break;
+                    }
 
                 case BuyEvent.Nov:
-                    November = lastKnownQuote;
-                    break;
+                    {
+                        November = lastKnownQuote;
+                        break;
+                    }
 
                 case BuyEvent.Dec:
-                    December = lastKnownQuote;
-                    break;
+                    {
+                        December = lastKnownQuote;
+                        break;
+                    }
 
                 case BuyEvent.Jan:
-                    January = lastKnownQuote;
-                    break;
+                    {
+                        January = lastKnownQuote;
+                        break;
+                    }
 
                 case BuyEvent.DividendDay:
-                    DividendDay = lastKnownQuote;
-                    break;
+                    {
+                        DividendDay = lastKnownQuote;
+                        break;
+                    }
             }
         }
     }

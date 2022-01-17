@@ -39,7 +39,12 @@ namespace SiegyFinances.Factories
                 }
                 if (quotes.DividendDay <= 0)
                 {
-                    quotes.UpdateStockRatedListed(BuyEvent.DividendDay, lastKnownQuote);
+                    //quotes.UpdateStockRatedListed(BuyEvent.DividendDay, lastKnownQuote);
+
+                    var xxx = lastKnownQuote;
+                    xxx -= 4;
+
+                    quotes.UpdateStockRatedListed(BuyEvent.DividendDay, xxx);
                 }
                 return quotes;
             }
