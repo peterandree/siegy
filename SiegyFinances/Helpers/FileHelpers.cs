@@ -21,6 +21,10 @@ namespace SiegyFinances.Helpers
         internal static MonthContainer FillWithQuotes(int p_year)
         {
             string path = Path.Combine(pathToFinancialDataMonths, $"MonthlyStockQuotes{p_year}.json");
+            if (!File.Exists(path))
+            {
+                return new MonthContainer(); //return an empty year, indicating there are no data
+            }
             using var r = new StreamReader(path);
             string json = r.ReadToEnd();
             return JsonConvert.DeserializeObject<MonthContainer>(json, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });

@@ -5,7 +5,6 @@ using System.Collections.Generic;
 
 namespace SiegyFinances.FinancialObjects
 {
-
     public sealed class MonthlyStockQuoteCollection
     {
         private static readonly Lazy<MonthlyStockQuoteCollection> lazy =
@@ -18,18 +17,19 @@ namespace SiegyFinances.FinancialObjects
             //initialize years
             years = new Dictionary<int, IMonthlyStockQuotes>();
 
+            var factory = new MonthlyStockQuotesFactory(2011);
+
             for (int i = 2011; i <= 2040; i++)
             {
-                years.Add(i, MonthlyStockQuotesFactory.Get(i));
+                years.Add(i, factory.Get(i));
             }
         }
 
-        private Dictionary<int, IMonthlyStockQuotes> years;
+        private readonly Dictionary<int, IMonthlyStockQuotes> years;
 
         public IMonthlyStockQuotes GetMonthlyStockQuotes(int p_year)
         {
             return years[p_year];
         }
     }
-
 }
