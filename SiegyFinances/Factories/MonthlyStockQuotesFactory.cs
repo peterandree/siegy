@@ -10,7 +10,7 @@ namespace SiegyFinances.Factories
         public static IMonthlyStockQuotes Get(int p_year)
         {
             const int firstAtLeastPartiallyKnownYear = 2011;
-            const int lastAtLeastPartiallyKnownYear = 2021; //todo pk: determine dynamically the last known year
+            const int lastAtLeastPartiallyKnownYear = 2022; //todo pk: determine dynamically the last known year
 
             if (p_year < firstAtLeastPartiallyKnownYear)
             {

@@ -25,7 +25,6 @@
     <None Remove="FinancialData\Years\MonthlyStockQuotes2018.json" />
     <None Remove="FinancialData\Years\MonthlyStockQuotes2018cs" />
     <None Remove="FinancialData\Years\MonthlyStockQuotes2019.json" />
-    <None Remove="FinancialData\Years\MonthlyStockQuotes2022.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -96,6 +95,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="FinancialData\Years\MonthlyStockQuotes2021.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="FinancialData\Years\MonthlyStockQuotes2022.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
