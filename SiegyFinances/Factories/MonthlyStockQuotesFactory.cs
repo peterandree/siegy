@@ -29,11 +29,11 @@ namespace SiegyFinances.Factories
             {
                 var quotes = new MonthlyStockQuotes(Helpers.FileHelpers.FillWithQuotes(p_year));
 
-                var lastKnownQuote = 0.0m;
+                var lastKnownQuote = decimal.Zero;
 
                 for (int i = 0; i < quotes.StockRatesListed().Count; i++) //don't use the enums here to preserve the upward logic of the months
                 {
-                    if (quotes.StockRatesListed()[i] > 0m)
+                    if (quotes.StockRatesListed()[i] > decimal.Zero)
                     {
                         lastKnownQuote = quotes.StockRatesListed()[i];
                     }
@@ -41,7 +41,7 @@ namespace SiegyFinances.Factories
                     {
                         if (lastKnownQuote == 0)
                         {
-                            lastKnownQuote = p_year == _firstAtLeastPartiallyKnownYear ? 0.0m : Get(p_year - 1).January; // not dividend day because of ex dividend effect
+                            lastKnownQuote = p_year == _firstAtLeastPartiallyKnownYear ? decimal.Zero : Get(p_year - 1).January; // not dividend day because of ex dividend effect
                         }
                         quotes.UpdateStockRatedListed(i, lastKnownQuote);
                     }

@@ -9,13 +9,13 @@ namespace SiegyFinances.FinancialCalculations
         {
             //var averageReturnOnInvest = new List<decimal>(); todo pk: show capital gains for every investment year
 
-            var ammount = 0m;
+            var amount = 0m;
             var investedCapital = 0m;
             foreach (InvestmentYear currentYear in AllPossibleYearsForMe.AllYears())
             {
                 if (currentYear.Year <= p_endYear)
                 {
-                    ammount += currentYear.AccumulatedStocks(p_endYear);
+                    amount += currentYear.AccumulatedStocks(p_endYear);
                     investedCapital += currentYear.InvestedCapital();
                 }
             }
@@ -26,7 +26,7 @@ namespace SiegyFinances.FinancialCalculations
             return new InvestmentReturns
             {
                 Endyear = p_endYear,
-                Ammount = ammount,
+                amount = amount,
                 DivPerStock = divPerStock,
                 StockValue = stockValue,
                 InvestedCapital = investedCapital

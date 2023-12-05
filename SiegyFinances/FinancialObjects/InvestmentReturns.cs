@@ -2,7 +2,7 @@
 {
     public class InvestmentReturns
     {
-        public decimal Ammount { get; set; }
+        public decimal amount { get; set; }
         public int Endyear { get; set; }
         public decimal DivPerStock { get; set; }
         public decimal StockValue { get; set; }

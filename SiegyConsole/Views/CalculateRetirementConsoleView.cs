@@ -22,18 +22,18 @@ namespace SiegyConsole.Views
 
             var returns = _model.InvestmentReturns;
             var endyear = returns.Endyear;
-            var totalValue = returns.Ammount * returns.StockValue;
+            var totalValue = returns.amount * returns.StockValue;
 
             Display.ConWriteLineFinancial("Total investment: {0}", returns.InvestedCapital);
 
-            Display.ConWriteLineNumber("Number of shares in year {0}: {1}", endyear, returns.Ammount);
+            Display.ConWriteLineNumber("Number of shares in year {0}: {1}", endyear, returns.amount);
 
             Display.ConWriteLineFinancial("Value of one share in year {0}: {1}", endyear, returns.StockValue);
             Display.ConWriteLineFinancial("Total value of shares in year {0}: {1}", endyear, totalValue);
 
             Display.ConWriteLineFinancial("Estimated dividend per share in year {0}: {1}", endyear, returns.DivPerStock);
 
-            Display.ConWriteLineFinancial("Estimated dividends payment in year {0}: {1}", endyear, returns.Ammount * returns.DivPerStock);
+            Display.ConWriteLineFinancial("Estimated dividends payment in year {0}: {1}", endyear, returns.amount * returns.DivPerStock);
 
             Display.ConWriteLineNumber("Total return in year {0}: {1}%", endyear, (totalValue - returns.InvestedCapital) * 100 / returns.InvestedCapital);
         }
