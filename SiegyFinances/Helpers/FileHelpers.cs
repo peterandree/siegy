@@ -1,7 +1,8 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json;
 using SiegyFinances.FinancialObjects;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace SiegyFinances.Helpers
 {
@@ -15,11 +16,22 @@ namespace SiegyFinances.Helpers
             string path = Path.Combine(pathToFinancialData, filename);
             using var r = new StreamReader(path);
             string json = r.ReadToEnd();
-            return JsonConvert.DeserializeObject<Dictionary<int, decimal>>(json);
+            var data = JsonSerializer.Deserialize<Dictionary<string, decimal>>(json);
+            return data.ToDictionary(kvp => int.Parse(kvp.Key), kvp => kvp.Value);
         }
+
+
+        // Cache for MonthlyStockQuotes
+        private static Dictionary<int, MonthContainer> monthlyStockQuotesCache = new Dictionary<int, MonthContainer>();
 
         internal static MonthContainer FillWithQuotes(int p_year)
         {
+            if (monthlyStockQuotesCache.ContainsKey(p_year))
+            {
+                // If the data is in the cache, return it
+                return monthlyStockQuotesCache[p_year];
+            }
+            
             string path = Path.Combine(pathToFinancialDataMonths, $"MonthlyStockQuotes{p_year}.json");
             if (!File.Exists(path))
             {
@@ -27,7 +39,30 @@ namespace SiegyFinances.Helpers
             }
             using var r = new StreamReader(path);
             string json = r.ReadToEnd();
-            return JsonConvert.DeserializeObject<MonthContainer>(json, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            var data = JsonSerializer.Deserialize<Dictionary<string, JsonElement>>(json);
+
+            var monthContainer = new MonthContainer
+            {
+                DividendDay = data["DividendDay"].GetDecimal(),
+                February = data["February"].GetDecimal(),
+                March = data["March"].GetDecimal(),
+                April = data["April"].GetDecimal(),
+                May = data["May"].GetDecimal(),
+                June = data["June"].GetDecimal(),
+                July = data["July"].GetDecimal(),
+                August = data["August"].GetDecimal(),
+                September = data["September"].GetDecimal(),
+                October = data["October"].GetDecimal(),
+                November = data["November"].GetDecimal(),
+                December = data["December"].GetDecimal(),
+                January = data["January"].GetDecimal()
+            };
+
+            // Add the data to the cache
+            monthlyStockQuotesCache[p_year] = monthContainer;
+
+            return monthContainer;
+
         }
     }
 }

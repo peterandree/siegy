@@ -1,15 +1,15 @@
 ﻿{
-  "DividendDay": "71.2857",
-  "February": "71.3952",
-  "March": "73.75896",
-  "April": "70.37251",
-  "May": "64.20744",
-  "June": "62.55763",
-  "July": "65.63534",
-  "August": "71.40485",
-  "September": "76.7016",
-  "October": "73.50811",
-  "November": "75.2351",
-  "December": "79.19078",
-  "January": "79.19078"
+  "DividendDay": 71.2857,
+  "February": 71.3952,
+  "March": 73.75896,
+  "April": 70.37251,
+  "May": 64.20744,
+  "June": 62.55763,
+  "July": 65.63534,
+  "August": 71.40485,
+  "September": 76.7016,
+  "October": 73.50811,
+  "November": 75.2351,
+  "December": 79.19078,
+  "January": 79.19078
 }
