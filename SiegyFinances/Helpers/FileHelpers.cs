@@ -20,18 +20,17 @@ namespace SiegyFinances.Helpers
             return data.ToDictionary(kvp => int.Parse(kvp.Key), kvp => kvp.Value);
         }
 
-
         // Cache for MonthlyStockQuotes
-        private static Dictionary<int, MonthContainer> monthlyStockQuotesCache = new Dictionary<int, MonthContainer>();
+        private static Dictionary<int, MonthContainer> monthlyStockQuotesCache = [];
 
         internal static MonthContainer FillWithQuotes(int p_year)
         {
-            if (monthlyStockQuotesCache.ContainsKey(p_year))
+            if (monthlyStockQuotesCache.TryGetValue(p_year, out MonthContainer value))
             {
                 // If the data is in the cache, return it
-                return monthlyStockQuotesCache[p_year];
+                return value;
             }
-            
+
             string path = Path.Combine(pathToFinancialDataMonths, $"MonthlyStockQuotes{p_year}.json");
             if (!File.Exists(path))
             {
@@ -62,7 +61,6 @@ namespace SiegyFinances.Helpers
             monthlyStockQuotesCache[p_year] = monthContainer;
 
             return monthContainer;
-
         }
     }
 }
