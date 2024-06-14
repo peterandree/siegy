@@ -10,11 +10,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SiegyFinances\SiegyFinances.csproj" />
+    <Compile Remove="Views\Gui\**" />
+    <EmbeddedResource Remove="Views\Gui\**" />
+    <None Remove="Views\Gui\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\Gui\" />
+    <ProjectReference Include="..\SiegyFinances\SiegyFinances.csproj" />
   </ItemGroup>
 
   <ItemGroup>
