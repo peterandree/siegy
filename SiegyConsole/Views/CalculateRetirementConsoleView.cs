@@ -4,6 +4,9 @@ using System;
 
 namespace SiegyConsole.Views
 {
+
+
+
     internal class CalculateRetirementConsoleView : IView
     {
         private IModel _model;
@@ -24,18 +27,30 @@ namespace SiegyConsole.Views
             var endyear = returns.Endyear;
             var totalValue = returns.amount * returns.StockValue;
 
-            Display.ConWriteLineFinancial("Total investment: {0}", returns.InvestedCapital);
+            // Function to print a line with a color for the variable
+            static void PrintColoredLine(ConsoleColor color, string literal, object variable)
+            {
+                Console.Write(literal);
+                Console.ForegroundColor = color;
+                Console.Write(variable);
+                Console.ResetColor();  // Reset the console color after printing the variable
+                Console.WriteLine();
+            }
 
-            Display.ConWriteLineNumber("Number of shares in year {0}: {1}", endyear, returns.amount);
+            // Calculate dividend yield
+            decimal dividendYield = (returns.DivPerStock / returns.StockValue) * 100;
 
-            Display.ConWriteLineFinancial("Value of one share in year {0}: {1}", endyear, returns.StockValue);
-            Display.ConWriteLineFinancial("Total value of shares in year {0}: {1}", endyear, totalValue);
+            // Use the function to print colored output
+            PrintColoredLine(ConsoleColor.Red, "Total investment: ", $"{returns.InvestedCapital:F2}");
+            PrintColoredLine(ConsoleColor.Green, $"Number of shares in year {endyear}: ", $"{returns.amount:F2}");
+            PrintColoredLine(ConsoleColor.Yellow, $"Value of one share in year {endyear}: ", $"{returns.StockValue:F2}");
+            PrintColoredLine(ConsoleColor.Blue, $"Total value of shares in year {endyear}: ", $"{totalValue:F2}");
+            PrintColoredLine(ConsoleColor.Magenta, $"Estimated dividend per share in year {endyear}: ", $"{returns.DivPerStock:F2}");
+            PrintColoredLine(ConsoleColor.Cyan, $"Dividend yield in year {endyear}: ", $"{dividendYield:F2}%");
+            PrintColoredLine(ConsoleColor.Cyan, $"Estimated dividends payment in year {endyear}: ", $"{(returns.amount * returns.DivPerStock):F2}");
+            PrintColoredLine(ConsoleColor.Red, $"Total return in year {endyear}: ", $"{((totalValue - returns.InvestedCapital) * 100 / returns.InvestedCapital):F2}%");
 
-            Display.ConWriteLineFinancial("Estimated dividend per share in year {0}: {1}", endyear, returns.DivPerStock);
 
-            Display.ConWriteLineFinancial("Estimated dividends payment in year {0}: {1}", endyear, returns.amount * returns.DivPerStock);
-
-            Display.ConWriteLineNumber("Total return in year {0}: {1}%", endyear, (totalValue - returns.InvestedCapital) * 100 / returns.InvestedCapital);
         }
 
         public string WaitForInput()
