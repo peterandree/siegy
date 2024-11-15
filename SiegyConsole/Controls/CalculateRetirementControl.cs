@@ -23,15 +23,22 @@ namespace SiegyConsole.Controls
         {
             _model.SetEndYear(startYear);
 
-            var input = _view.WaitForInput().Trim();
-
-            while (!ExitCondition.Equals(input, StringComparison.OrdinalIgnoreCase))
+            while (true)
             {
-                if (int.TryParse(input, out int inputYear))
+                var input = _view.WaitForInput().Trim();
+
+                if (ExitCondition.Equals(input, StringComparison.OrdinalIgnoreCase))
                 {
-                    _model.SetEndYear(inputYear);
+                    Console.WriteLine("Exiting program... Have a nice day!");
+                    // Perform any necessary cleanup here
+                    Environment.Exit(0); // This will close the console immediately
                 }
-                input = _view.WaitForInput().Trim();
+
+                if (!int.TryParse(input, out int inputYear))
+                {
+                    continue;
+                }
+                _model.SetEndYear(inputYear);
             }
         }
 

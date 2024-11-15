@@ -1,5 +1,4 @@
-﻿using SiegyConsole.Helpers;
-using SiegyConsole.Interfaces;
+﻿using SiegyConsole.Interfaces;
 using System;
 
 namespace SiegyConsole.Views
@@ -41,13 +40,13 @@ namespace SiegyConsole.Views
             decimal dividendYield = (returns.DivPerStock / returns.StockValue) * 100;
 
             // Use the function to print colored output
-            PrintColoredLine(ConsoleColor.Red, "Total investment: ", $"{returns.InvestedCapital:F2}");
+            PrintColoredLine(ConsoleColor.Yellow, "Total investment: ", $"{returns.InvestedCapital:F2}");
             PrintColoredLine(ConsoleColor.Green, $"Number of shares in year {endyear}: ", $"{returns.amount:F2}");
-            PrintColoredLine(ConsoleColor.Yellow, $"Value of one share in year {endyear}: ", $"{returns.StockValue:F2}");
+            PrintColoredLine(ConsoleColor.DarkYellow, $"Value of one share in year {endyear}: ", $"{returns.StockValue:F2}");
             PrintColoredLine(ConsoleColor.Blue, $"Total value of shares in year {endyear}: ", $"{totalValue:F2}");
             PrintColoredLine(ConsoleColor.Magenta, $"Estimated dividend per share in year {endyear}: ", $"{returns.DivPerStock:F2}");
             PrintColoredLine(ConsoleColor.Cyan, $"Dividend yield in year {endyear}: ", $"{dividendYield:F2}%");
-            PrintColoredLine(ConsoleColor.Cyan, $"Estimated dividends payment in year {endyear}: ", $"{(returns.amount * returns.DivPerStock):F2}");
+            PrintColoredLine(ConsoleColor.DarkCyan, $"Estimated dividends payment in year {endyear}: ", $"{(returns.amount * returns.DivPerStock):F2}");
             PrintColoredLine(ConsoleColor.Red, $"Total return in year {endyear}: ", $"{((totalValue - returns.InvestedCapital) * 100 / returns.InvestedCapital):F2}%");
 
 
