@@ -15,7 +15,7 @@ namespace SiegyFinances.FinancialObjects
         private MonthlyStockQuoteCollection()
         {
             //initialize years
-            years = new Dictionary<int, IMonthlyStockQuotes>();
+            years = [];
 
             var factory = new MonthlyStockQuotesFactory(2011);
 

@@ -3,9 +3,6 @@ using System;
 
 namespace SiegyConsole.Views
 {
-
-
-
     internal class CalculateRetirementConsoleView : IView
     {
         private IModel _model;
