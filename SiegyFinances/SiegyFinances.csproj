@@ -26,6 +26,7 @@
     <None Remove="FinancialData\Years\MonthlyStockQuotes2018.json" />
     <None Remove="FinancialData\Years\MonthlyStockQuotes2018cs" />
     <None Remove="FinancialData\Years\MonthlyStockQuotes2019.json" />
+    <None Remove="FinancialData\Years\MonthlyStockQuotesTemplate.json" />
   </ItemGroup>
 
   <ItemGroup>
