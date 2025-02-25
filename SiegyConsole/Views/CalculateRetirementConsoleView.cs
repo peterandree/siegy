@@ -46,8 +46,8 @@ namespace SiegyConsole.Views
             PrintColoredLine(ConsoleColor.Blue, $"Total value of shares in year {endyear}: ", $"{totalValue:F2} €");
             PrintColoredLine(ConsoleColor.Magenta, $"Estimated dividend per share in year {endyear}: ", $"{returns.DivPerStock:F2} €");
             PrintColoredLine(ConsoleColor.Cyan, $"Dividend yield in year {endyear}: ", $"{dividendYield:F2}%");
-            PrintColoredLine(ConsoleColor.DarkCyan, $"Estimated dividends payment in year {endyear}: ", $"{(returns.amount * returns.DivPerStock):F2} €");
-            PrintColoredLine(ConsoleColor.Red, $"Total return in year {endyear}: ", $"{((totalValue - returns.InvestedCapital) * 100 / returns.InvestedCapital):F2}%");
+            PrintColoredLine(ConsoleColor.DarkCyan, $"Estimated dividends payment in year {endyear}: ", $"{returns.amount * returns.DivPerStock:F2} €");
+            PrintColoredLine(ConsoleColor.Red, $"Total return in year {endyear}: ", $"{(totalValue - returns.InvestedCapital) * 100 / returns.InvestedCapital:F2}%");
         }
 
         public string WaitForInput()

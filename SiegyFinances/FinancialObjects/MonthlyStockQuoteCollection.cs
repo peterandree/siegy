@@ -8,7 +8,7 @@ namespace SiegyFinances.FinancialObjects
     public sealed class MonthlyStockQuoteCollection
     {
         private static readonly Lazy<MonthlyStockQuoteCollection> lazy =
-            new Lazy<MonthlyStockQuoteCollection>(() => new MonthlyStockQuoteCollection());
+            new(() => new MonthlyStockQuoteCollection());
 
         public static MonthlyStockQuoteCollection Instance { get { return lazy.Value; } }
 

@@ -21,7 +21,7 @@ namespace SiegyFinances.Helpers
         }
 
         // Cache for MonthlyStockQuotes
-        private static Dictionary<int, MonthContainer> monthlyStockQuotesCache = [];
+        private static readonly Dictionary<int, MonthContainer> monthlyStockQuotesCache = [];
 
         internal static MonthContainer FillWithQuotes(int p_year)
         {
