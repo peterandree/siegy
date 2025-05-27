@@ -1,4 +1,5 @@
 ﻿using SiegyFinances.FinancialObjects;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -21,7 +22,7 @@ namespace SiegyFinances.Helpers
         }
 
         // Cache for MonthlyStockQuotes
-        private static readonly Dictionary<int, MonthContainer> monthlyStockQuotesCache = [];
+        private static readonly ConcurrentDictionary<int, MonthContainer> monthlyStockQuotesCache = [];
 
         internal static MonthContainer FillWithQuotes(int p_year)
         {
@@ -36,8 +37,8 @@ namespace SiegyFinances.Helpers
             {
                 return new MonthContainer(); //return an empty year, indicating there are no data
             }
-            using var r = new StreamReader(path);
-            string json = r.ReadToEnd();
+
+            string json = File.ReadAllText(path);
             var data = JsonSerializer.Deserialize<Dictionary<string, JsonElement>>(json);
 
             var monthContainer = new MonthContainer
