@@ -110,7 +110,7 @@
     <None Update="FinancialData\Years\MonthlyStockQuotes2024.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="FinancialData\Years\MonthlyStockQuotes2025.json">
+    <None Update="FinancialData\Years\MonthlyStockQuotes2026.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
