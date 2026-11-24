@@ -12,7 +12,7 @@
   "author": "Joe Eames & Jim Cooper",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "1.20.4",
+    "body-parser": "1.20.9",
     "express": "4.22.1"
   }
 }
